@@ -2,26 +2,18 @@ import Link from "next/link";
 import PropTypes from "prop-types";
 
 /**
- * Clean design matching the blue/gray aesthetic from the concept
+ * Ultra-minimal design matching the reference image exactly
  */
 const ArtistsList = ({ posts = [] }) => {
 	return (
-		<div className="clean-layout">
-			{/* Blue header section */}
-			<div className="blue-header">
-				<h1 className="main-heading">
-					Electronic Music —<br />
-					Artists Collective,<br />
-					Sound & Culture.
-				</h1>
-				<div className="subtitle">
-					— INTERWAVE<br />
-					<span className="small-text">Digital collective, laboratory of creation and experimentation.</span>
-				</div>
+		<div className="minimal-layout">
+			{/* Blue header section - minimal */}
+			<div className="blue-header-minimal">
+				<h1 className="simple-title">interwave</h1>
 			</div>
 
 			{/* Light section with oval shapes */}
-			<div className="light-section">
+			<div className="light-section-minimal">
 				{/* Decorative oval shapes */}
 				<div className="oval-shapes">
 					<div className="oval oval-1"></div>
@@ -45,27 +37,12 @@ const ArtistsList = ({ posts = [] }) => {
 				</div>
 
 				{/* Artists grid */}
-				<div className="artists-grid-clean">
+				<div className="artists-grid-minimal">
 					{posts.map(({ slug, title }) => (
-						<Link key={slug} href={`/artist/${slug}`} className="artist-link-clean">
+						<Link key={slug} href={`/artist/${slug}`} className="artist-link-minimal">
 							{title}
 						</Link>
 					))}
-				</div>
-
-				{/* Description text */}
-				<div className="description-text">
-					INTERWAVE is a collective engagement by artists and their guests 
-					to think and build possible worlds of tomorrow. They observe electronic 
-					music culture and its potential and develop exploration tools to inspire 
-					and create collectively. The collective is a total work that shows us the 
-					paths to take. We are souls facing this modern line that may have lost its way.
-				</div>
-
-				{/* Support text */}
-				<div className="support-text">
-					With the support of VENUES<br />
-					In partnership with LABELS
 				</div>
 			</div>
 		</div>
