@@ -1,5 +1,5 @@
 /**
- * Header - Ekipa inspired simple design
+ * Header - Clean elegant design matching the concept
  */
 
 /* Header */
@@ -8,9 +8,9 @@
 	top: 0;
 	left: 0;
 	right: 0;
-	padding: 2rem;
-	background: #f8f8f8;
-	border-bottom: 1px solid #e5e5e5;
+	padding: 1.5rem 2rem;
+	background: #e8e8f0;
+	border-bottom: 1px solid rgba(61, 90, 241, 0.1);
 	z-index: 1000;
 }
 
@@ -31,28 +31,13 @@
 			.nav-link {
 				color: #333;
 				text-decoration: none;
-				font-size: 1.1rem;
+				font-size: 1rem;
 				font-weight: 400;
-				transition: all 0.3s ease;
-				position: relative;
-
-				&::after {
-					content: '';
-					position: absolute;
-					bottom: -5px;
-					left: 0;
-					width: 0;
-					height: 2px;
-					background: #1e40af;
-					transition: width 0.3s ease;
-				}
+				transition: color 0.3s ease;
+				font-family: 'Helvetica', 'Arial', sans-serif;
 
 				&:hover {
-					color: #1e40af;
-					
-					&::after {
-						width: 100%;
-					}
+					color: #3d5af1;
 				}
 			}
 		}

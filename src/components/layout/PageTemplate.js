@@ -6,69 +6,12 @@ import Footer from "./Footer";
 import Header from "./Header";
 
 /**
- * Main page template wrapper with geometric line cursor
+ * Main page template wrapper - clean and minimal
  */
 const PageTemplate = ({ children }) => {
 	useEffect(() => {
-		// Set Ekipa-style background color
-		document.documentElement.style.setProperty('--bg-color', '#f8f8f8');
-		
-		// Blue cursor for Ekipa theme
-		const cursor = document.createElement('div');
-		cursor.id = 'cursor-line';
-		cursor.style.cssText = `
-			position: fixed;
-			top: 0;
-			left: 0;
-			width: 60px;
-			height: 2px;
-			background: rgba(30, 64, 175, 0.8);
-			pointer-events: none;
-			transform: translate(-50%, -50%) rotate(-15deg);
-			transition: all 0.08s ease;
-			z-index: 9999;
-		`;
-		document.body.appendChild(cursor);
-		
-		const moveCursor = (e) => {
-			cursor.style.top = `${e.clientY}px`;
-			cursor.style.left = `${e.clientX}px`;
-		};
-		
-		// Wiggle effect on artist hover
-		const addWiggleEffect = () => {
-			cursor.style.background = '#1e40af';
-			cursor.style.animation = 'cursor-wave 1.2s ease-in-out infinite';
-			cursor.style.width = '80px';
-		};
-		
-		const removeWiggleEffect = () => {
-			cursor.style.background = 'rgba(30, 64, 175, 0.8)';
-			cursor.style.animation = 'none';
-			cursor.style.width = '60px';
-		};
-		
-		// Add event listeners
-		document.addEventListener('mousemove', moveCursor);
-		
-		// Add wiggle effects to artist links
-		const artistLinks = document.querySelectorAll('.artist-item');
-		artistLinks.forEach(link => {
-			link.addEventListener('mouseenter', addWiggleEffect);
-			link.addEventListener('mouseleave', removeWiggleEffect);
-		});
-		
-		// Cleanup function
-		return () => {
-			document.removeEventListener('mousemove', moveCursor);
-			artistLinks.forEach(link => {
-				link.removeEventListener('mouseenter', addWiggleEffect);
-				link.removeEventListener('mouseleave', removeWiggleEffect);
-			});
-			if (cursor && cursor.parentNode) {
-				cursor.parentNode.removeChild(cursor);
-			}
-		};
+		// Set clean background color
+		document.documentElement.style.setProperty('--bg-color', '#e8e8f0');
 	}, []);
 
 	return (
