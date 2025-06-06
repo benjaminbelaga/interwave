@@ -1,9 +1,10 @@
+import Link from "next/link";
 import PropTypes from "prop-types";
 
 /**
  * Site Footer - Ekipa style minimal footer
  */
-const Footer = ({ menu }) => {
+const Footer = () => {
 	return (
 		<footer className="site-footer">
 			<div className="footer-content">
@@ -25,20 +26,15 @@ const Footer = ({ menu }) => {
 					>
 						Instagram
 					</a>
-					<a 
-						href="/newsletter" 
-						className="footer-link"
-					>
+					<Link href="/newsletter" className="footer-link">
 						Newsletter
-					</a>
+					</Link>
 				</div>
 			</div>
 		</footer>
 	);
 };
 
-Footer.propTypes = {
-	menu: PropTypes.array,
-};
+Footer.propTypes = {};
 
 export default Footer;

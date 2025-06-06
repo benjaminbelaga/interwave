@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 /**
  * Site Header - Ekipa agency inspired minimal navigation
  */
-const Header = ({ menu = [] }) => {
+const Header = () => {
 	return (
 		<header className="site-header">
 			<nav className="site-nav">
@@ -30,8 +30,6 @@ const Header = ({ menu = [] }) => {
 	);
 };
 
-Header.propTypes = {
-	menu: PropTypes.array,
-};
+Header.propTypes = {};
 
 export default Header;

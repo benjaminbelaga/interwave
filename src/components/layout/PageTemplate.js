@@ -1,39 +1,28 @@
 import PropTypes from "prop-types";
 
-import Header from "./Header";
 import Footer from "./Footer";
+import Header from "./Header";
 
 /**
- * A PageTemplate with enhanced Interwave-inspired animated wave cursor and artistic features.
- *
- * @param {Object} props - Component properties.
- * @param {React.ReactNode} props.children - Content to be rendered within the PageTemplate.
- * @param {Array} props.menu - Menu items for the Header component.
- *
- * @returns {JSX.Element} The rendered PageTemplate component.
+ * Main page template wrapper
  */
-const PageTemplate = ({ children, menu }) => {
+const PageTemplate = ({ children }) => {
 	return (
 		<div className="page-wrapper">
-			<Header menu={menu} />
+			<Header />
 			<main className="site-content">
 				{children}
 			</main>
-			<Footer menu={menu} />
+			<Footer />
 		</div>
 	);
 };
 
-// PropTypes
 PageTemplate.propTypes = {
 	/**
 	 * Content to be rendered within the PageTemplate.
 	 */
 	children: PropTypes.node.isRequired,
-	/**
-	 * Menu items for the Header component.
-	 */
-	menu: PropTypes.array,
 };
 
 // Export the PageTemplate component
