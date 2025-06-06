@@ -1,7 +1,5 @@
-import Link from "next/link";
-
 /**
- * Site Footer - Ekipa style minimal footer
+ * Simple footer - Japanese minimalist design
  */
 const Footer = () => {
 	return (
@@ -17,12 +15,7 @@ const Footer = () => {
 				</div>
 				
 				<div className="footer-section">
-					<a 
-						href="https://www.instagram.com/interwave.live" 
-						target="_blank" 
-						rel="noopener noreferrer"
-						className="footer-link"
-					>
+					<a href="/instagram" className="footer-link">
 						Instagram
 					</a>
 				</div>

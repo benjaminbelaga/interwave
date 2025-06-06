@@ -1,5 +1,5 @@
 /**
- *  Header
+ * Header - Japanese minimalist design
  */
 
 /* Header */
@@ -8,62 +8,10 @@
 	top: 0;
 	left: 0;
 	right: 0;
-	padding: 2rem;
-	background: transparent;
+	padding: 1.5rem 2rem;
+	background: white;
+	border-bottom: 2px solid #f0f0f0;
 	z-index: 1000;
-	
-	.main-nav {
-		ul {
-			list-style: none;
-			margin: 0;
-			padding: 0;
-			display: flex;
-			gap: 3rem;
-			
-			@media (max-width: 768px) {
-				gap: 2rem;
-				justify-content: center;
-			}
-			
-			li {
-				a {
-					color: rgba(0, 0, 0, 0.7);
-					text-decoration: none;
-					font-size: 1.1rem;
-					font-weight: 300;
-					transition: color 0.3s ease;
-					letter-spacing: -0.01em;
-					
-					&:hover {
-						color: rgba(0, 0, 0, 0.9);
-					}
-				}
-			}
-		}
-	}
-}
-
-.header-btn {
-	position: relative;
-	text-decoration: none;
-	font-size: $font-size-sm;
-	font-weight: $font-weight-medium;
-	line-height: $line-height-base;
-	position: relative;
-	z-index: 1;
-	display: inline-flex;
-	align-items: center;
-	padding: 0.25rem 1rem;
-	background: $color-bg-item1;
-	color: $white;
-	border: 1px solid $white;
-	transition: all 0.15s ease;
-
-	&:hover {
-		color: $color-bg-item1;
-		background: $white;
-		border: 1px solid $color-bg-item1;
-	}
 }
 
 .site-nav {
@@ -72,19 +20,28 @@
 		margin: 0;
 		padding: 0;
 		display: flex;
-		gap: 2.5rem;
+		gap: 3rem;
+		justify-content: center;
+
+		@media (max-width: 768px) {
+			gap: 2rem;
+		}
 
 		li {
 			.nav-link {
-				color: rgba(0, 0, 0, 0.7);
+				color: #333;
 				text-decoration: none;
-				font-size: 1.05rem;
-				font-weight: 300;
+				font-size: 1rem;
+				font-weight: bold;
 				transition: color 0.3s ease;
-				letter-spacing: -0.01em;
+				letter-spacing: 0.05em;
+				text-transform: uppercase;
+				padding: 0.5rem 1rem;
+				border: 2px solid transparent;
 
 				&:hover {
-					color: rgba(0, 0, 0, 0.9);
+					color: #d32f2f;
+					border-color: #d32f2f;
 				}
 			}
 		}

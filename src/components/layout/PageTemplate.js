@@ -65,7 +65,7 @@ const PageTemplate = ({ children }) => {
 		document.addEventListener('mousemove', moveCursor);
 		
 		// Add wiggle effects to artist links
-		const artistLinks = document.querySelectorAll('.artist-link');
+		const artistLinks = document.querySelectorAll('.artist-link.structured');
 		artistLinks.forEach(link => {
 			link.addEventListener('mouseenter', addWiggleEffect);
 			link.addEventListener('mouseleave', removeWiggleEffect);
