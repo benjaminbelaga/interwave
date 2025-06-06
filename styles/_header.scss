@@ -1,5 +1,5 @@
 /**
- * Header - Japanese minimalist design
+ * Header - Academic book design
  */
 
 /* Header */
@@ -8,9 +8,9 @@
 	top: 0;
 	left: 0;
 	right: 0;
-	padding: 1.5rem 2rem;
-	background: white;
-	border-bottom: 2px solid #f0f0f0;
+	padding: 2rem 2rem 1rem;
+	background: #f4c2c2;
+	border-bottom: 2px solid rgba(211, 47, 47, 0.2);
 	z-index: 1000;
 }
 
@@ -20,7 +20,7 @@
 		margin: 0;
 		padding: 0;
 		display: flex;
-		gap: 3rem;
+		gap: 4rem;
 		justify-content: center;
 
 		@media (max-width: 768px) {
@@ -29,19 +29,19 @@
 
 		li {
 			.nav-link {
-				color: #333;
+				color: #d32f2f;
 				text-decoration: none;
-				font-size: 1rem;
-				font-weight: bold;
-				transition: color 0.3s ease;
-				letter-spacing: 0.05em;
-				text-transform: uppercase;
-				padding: 0.5rem 1rem;
-				border: 2px solid transparent;
+				font-size: 1.1rem;
+				font-weight: normal;
+				transition: all 0.3s ease;
+				letter-spacing: 0.02em;
+				font-family: 'Times New Roman', 'Times', serif;
+				padding: 0.5rem 0;
+				border-bottom: 1px solid transparent;
 
 				&:hover {
-					color: #d32f2f;
-					border-color: #d32f2f;
+					border-bottom-color: #d32f2f;
+					font-weight: bold;
 				}
 			}
 		}

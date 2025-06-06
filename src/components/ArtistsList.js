@@ -2,118 +2,61 @@ import Link from "next/link";
 import PropTypes from "prop-types";
 
 /**
- * Displays artists in a structured Japanese-inspired design with geometric sections
+ * Academic book-style layout for artists
  */
 const ArtistsList = ({ posts = [] }) => {
-	// Split artists into sections for structured layout
-	const sectionsData = [
-		{ title: "ELECTRONIC", color: "red", number: "1" },
-		{ title: "LIVE", color: "blue", number: "2" },
-		{ title: "AMBIENT", color: "red", number: "3" },
-		{ title: "TECHNO", color: "blue", number: "4" }
-	];
-
-	const artistsPerSection = Math.ceil(posts.length / 4);
-	const sections = sectionsData.map((section, index) => ({
-		...section,
-		artists: posts.slice(index * artistsPerSection, (index + 1) * artistsPerSection)
-	}));
-
 	return (
-		<div className="structured-layout">
-			{/* Main header with geometric elements */}
-			<div className="header-section">
-				<div className="geometric-frame red-frame">
-					<div className="dots-pattern">
-						<span className="dot"></span>
-						<span className="dot"></span>
-						<span className="dot"></span>
-						<span className="dot"></span>
-					</div>
-					<div className="main-title">
-						<span className="title-main">INTERWAVE</span>
-						<span className="title-sub">BY COLLECTIVE</span>
-					</div>
-				</div>
+		<div className="book-layout">
+			<div className="book-content">
 				
-				<div className="geometric-frame blue-frame">
-					<div className="direction-arrows">
-						<span className="arrow left">←</span>
-						<span className="arrow up">↑</span>
-						<span className="vision-symbol">👁</span>
-						<span className="arrow right">→</span>
-						<span className="arrow down">↓</span>
-					</div>
-					<div className="japanese-text">アーティスト</div>
-					<div className="circle-number">3</div>
+				{/* Title section */}
+				<div className="book-title-section">
+					<h1 className="main-title">INTERWAVE</h1>
+					<p className="subtitle-text">
+						A collective exploration of electronic aesthetics, where individual artistic 
+						practices converge to form a cohesive digital identity. Each artist contributes 
+						their unique interpretation while maintaining the collective's core philosophy.
+					</p>
 				</div>
 
-				<div className="geometric-frame red-frame handcrafted">
-					<div className="hand-icons">🤚 ✋</div>
-					<div className="craft-text">
-						<span className="craft-main">handcrafted</span>
-						<span className="craft-sub">手作り</span>
-					</div>
-					<div className="circle-number">5</div>
-				</div>
-			</div>
-
-			{/* Main content grid */}
-			<div className="content-grid">
-				<div className="side-label">One Pack</div>
-				
-				<div className="center-section">
-					<div className="circle-number main-number">1</div>
-					<h1 className="main-heading">ARTISTS COLLECTIVE</h1>
-					<h2 className="sub-heading">アーティストコレクティブ</h2>
-					<div className="material-tags">
-						<span className="material-tag">ELECTRONIC</span>
-						<span className="material-tag">JAPAN</span>
-					</div>
-				</div>
-
-				<div className="side-measurement">150</div>
-			</div>
-
-			{/* Artists sections */}
-			<div className="artists-sections">
-				{sections.map((section, sectionIndex) => (
-					<div key={section.title} className={`artist-section ${section.color}-section`}>
-						<div className="section-header">
-							<div className={`geometric-frame ${section.color}-frame section-frame`}>
-								<div className="section-title">{section.title}</div>
-								<div className="section-subtitle">セクション</div>
-							</div>
-							<div className="circle-number">{section.number}</div>
-						</div>
+				{/* Artists section as academic text */}
+				<div className="artists-text-section">
+					<h2 className="section-heading">Featured Artists ::</h2>
+					<div className="artists-text-content">
+						<p className="intro-paragraph">
+							The concept of collaboration is inherently subjective, shaped by each 
+							individual's own creative preferences. Our roster represents diverse 
+							interpretations of electronic music culture, presenting a unique challenge 
+							as it may conflict with traditional notions of singular artistic vision.
+						</p>
 						
-						<div className="artists-grid">
-							{section.artists.map(({ slug, title }) => (
-								<Link key={slug} href={`/artist/${slug}`} className="artist-link structured">
-									<span className="artist-name">{title}</span>
-									<span className="artist-arrow">→</span>
-								</Link>
+						<div className="artists-grid-text">
+							{posts.map(({ slug, title }, index) => (
+								<div key={slug} className="artist-entry">
+									<Link href={`/artist/${slug}`} className="artist-link-text">
+										<span className="artist-number">{String(index + 1).padStart(2, '0')}</span>
+										<span className="artist-name-text">{title}</span>
+									</Link>
+								</div>
 							))}
 						</div>
+
+						<p className="closing-paragraph">
+							This realization became an integral point to the project, prompting 
+							experimentation with collaborative methods as a means to express 
+							conceptual diversity. While recognizing the interpretations of individual 
+							aesthetics, I aimed to incorporate collective practices that communicate 
+							our shared digital methodology.
+						</p>
 					</div>
-				))}
-			</div>
-
-			{/* Bottom section with vision diagram */}
-			<div className="vision-section">
-				<div className="circle-number">4</div>
-				<div className="vision-diagram">
-					<span className="vision-text near">近</span>
-					<span className="vision-text up">遠</span>
-					<span className="vision-center">視</span>
-					<span className="vision-text down">極</span>
 				</div>
-				<div className="circle-number">6</div>
-			</div>
 
-			<div className="footer-text">
-				<span className="collect-text">COLLECT INTERWAVE</span>
-				<span className="japanese-footer">インターウェーブを集める</span>
+				{/* Page numbers */}
+				<div className="page-numbers">
+					<span className="page-number left">::&nbsp;01&nbsp;::</span>
+					<span className="page-number right">::&nbsp;02&nbsp;::</span>
+				</div>
+
 			</div>
 		</div>
 	);
