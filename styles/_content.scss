@@ -8,14 +8,13 @@
 	min-height: 100vh;
 	position: relative;
 	overflow: hidden;
-	padding-top: 6rem; /* Account for fixed header */
 }
 
 /* Artists grid layout - Enhanced Ekipa style */
 .artists-grid-wrapper {
 	position: relative;
 	width: 100%;
-	min-height: calc(100vh - 6rem);
+	min-height: 100vh;
 	padding: 3rem 5%;
 	
 	/* Geometric background elements like Ekipa */
@@ -401,21 +400,4 @@ body {
 #cursor-line {
 	width: 60px;
 	height: 3px;
-}
-
-/* Decorative blue wave group */
-.blue-wave {
-	position: absolute;
-	z-index: 0;
-	opacity: 0.15;
-	pointer-events: none;
-	stroke-width: 2px;
-	
-	&.wave-group-1 {
-		top: 12%;
-		left: 18%;
-		width: 500px;
-		height: auto;
-		transform: rotate(-5deg);
-	}
 }

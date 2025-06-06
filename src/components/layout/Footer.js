@@ -25,9 +25,6 @@ const Footer = () => {
 					>
 						Instagram
 					</a>
-					<Link href="/newsletter" className="footer-link">
-						Newsletter
-					</Link>
 				</div>
 			</div>
 		</footer>
