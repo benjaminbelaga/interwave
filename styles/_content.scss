@@ -1,5 +1,5 @@
 /**
- * Main Content - Ekipa agency artistic design with wave patterns
+ * Main Content - Ekipa agency artistic design
  */
 
 /* Site content */
@@ -11,7 +11,7 @@
 	padding-top: 6rem; /* Account for fixed header */
 }
 
-/* Artists grid layout - Enhanced Ekipa style with wave patterns */
+/* Artists grid layout - Enhanced Ekipa style */
 .artists-grid-wrapper {
 	position: relative;
 	width: 100%;
@@ -44,62 +44,6 @@
 	}
 }
 
-/* Subtle wave background patterns */
-.wave-bg {
-	position: absolute;
-	z-index: 0;
-	opacity: 0.7;
-	pointer-events: none;
-	
-	&.wave-bg-1 {
-		top: 15%;
-		left: 10%;
-		width: 300px;
-		height: 150px;
-		transform: rotate(-8deg);
-		animation: wave-drift-1 20s ease-in-out infinite;
-	}
-	
-	&.wave-bg-2 {
-		top: 45%;
-		right: 15%;
-		width: 250px;
-		height: 125px;
-		transform: rotate(12deg);
-		animation: wave-drift-2 25s ease-in-out infinite;
-	}
-	
-	&.wave-bg-3 {
-		bottom: 20%;
-		left: 20%;
-		width: 280px;
-		height: 140px;
-		transform: rotate(-5deg);
-		animation: wave-drift-3 30s ease-in-out infinite;
-	}
-	
-	path {
-		stroke-linecap: round;
-		stroke-linejoin: round;
-	}
-}
-
-/* Wave drift animations */
-@keyframes wave-drift-1 {
-	0%, 100% { transform: rotate(-8deg) translateY(0); }
-	50% { transform: rotate(-6deg) translateY(-10px); }
-}
-
-@keyframes wave-drift-2 {
-	0%, 100% { transform: rotate(12deg) translateY(0); }
-	50% { transform: rotate(10deg) translateY(8px); }
-}
-
-@keyframes wave-drift-3 {
-	0%, 100% { transform: rotate(-5deg) translateY(0); }
-	50% { transform: rotate(-3deg) translateY(-6px); }
-}
-
 /* Additional geometric elements */
 .artists-grid-wrapper {
 	.geo-element {
@@ -108,7 +52,7 @@
 		z-index: 1;
 		transition: all 0.3s ease;
 		
-		&:nth-child(5) {
+		&:nth-child(1) {
 			top: 40%;
 			left: 2%;
 			width: 60px;
@@ -116,7 +60,7 @@
 			transform: rotate(-45deg);
 		}
 		
-		&:nth-child(6) {
+		&:nth-child(2) {
 			top: 60%;
 			right: 15%;
 			width: 100px;
@@ -124,7 +68,7 @@
 			transform: rotate(35deg);
 		}
 		
-		&:nth-child(7) {
+		&:nth-child(3) {
 			bottom: 20%;
 			left: 10%;
 			width: 140px;
@@ -132,7 +76,7 @@
 			transform: rotate(-15deg);
 		}
 		
-		&:nth-child(8) {
+		&:nth-child(4) {
 			bottom: 35%;
 			right: 5%;
 			width: 90px;
@@ -155,7 +99,15 @@
 	50% { opacity: 0.6; transform: rotate(-15deg) scale(1.05); }
 }
 
-/* Interwave title - more stylized like Ekipa */
+/* Cursor wiggle animation */
+@keyframes cursor-wiggle {
+	0%, 100% { transform: translate(-50%, -50%) rotate(-15deg) translateY(0); }
+	25% { transform: translate(-50%, -50%) rotate(-12deg) translateY(-2px); }
+	50% { transform: translate(-50%, -50%) rotate(-18deg) translateY(1px); }
+	75% { transform: translate(-50%, -50%) rotate(-14deg) translateY(-1px); }
+}
+
+/* Interwave title - stylized like Ekipa */
 .interwave-title {
 	position: relative;
 	font-family: 'Inter', 'Helvetica Neue', 'Arial', sans-serif;
@@ -426,73 +378,6 @@
 	}
 }
 
-/* Custom animated wave cursor */
-#cursor-wave {
-	position: fixed;
-	top: 0;
-	left: 0;
-	pointer-events: none;
-	transform: translate(-50%, -50%);
-	transition: all 0.15s ease;
-	z-index: 9999;
-	
-	svg {
-		width: 50px;
-		height: 25px;
-		
-		.wave-path {
-			stroke: rgba(0, 0, 0, 0.6);
-			stroke-width: 2;
-			fill: none;
-			animation: wave-flow 3s ease-in-out infinite;
-			stroke-dasharray: 8, 4;
-			stroke-dashoffset: 0;
-			stroke-linecap: round;
-		}
-	}
-	
-	&.hovering {
-		transform: translate(-50%, -50%) scale(1.2);
-		
-		.wave-path {
-			stroke: #0066cc;
-			stroke-width: 3;
-			animation: wave-flow-hover 1.5s ease-in-out infinite;
-		}
-	}
-}
-
-/* Wave animation keyframes */
-@keyframes wave-flow {
-	0% {
-		stroke-dashoffset: 0;
-		d: path("M0,12 Q12,6 25,12 T50,12");
-	}
-	50% {
-		stroke-dashoffset: 12;
-		d: path("M0,12 Q12,18 25,12 T50,12");
-	}
-	100% {
-		stroke-dashoffset: 24;
-		d: path("M0,12 Q12,6 25,12 T50,12");
-	}
-}
-
-@keyframes wave-flow-hover {
-	0% {
-		stroke-dashoffset: 0;
-		d: path("M0,12 Q10,4 25,12 T50,12");
-	}
-	50% {
-		stroke-dashoffset: 18;
-		d: path("M0,12 Q15,20 25,12 T50,12");
-	}
-	100% {
-		stroke-dashoffset: 36;
-		d: path("M0,12 Q10,4 25,12 T50,12");
-	}
-}
-
 /* Hide default cursor */
 body {
 	cursor: none;
@@ -504,7 +389,7 @@ body {
 
 /* Ensure mobile doesn't show custom cursor */
 @media (max-width: 768px) {
-	#cursor-wave {
+	#cursor-line {
 		display: none;
 	}
 }
