@@ -32,12 +32,12 @@ const PageTemplate = ({ children }) => {
 			position: fixed;
 			top: 0;
 			left: 0;
-			width: 40px;
-			height: 2px;
-			background: rgba(0, 0, 0, 0.8);
+			width: 60px;
+			height: 3px;
+			background: rgba(0, 0, 0, 0.85);
 			pointer-events: none;
 			transform: translate(-50%, -50%) rotate(-15deg);
-			transition: all 0.1s ease;
+			transition: all 0.08s ease;
 			z-index: 9999;
 		`;
 		document.body.appendChild(cursor);
@@ -50,14 +50,14 @@ const PageTemplate = ({ children }) => {
 		// Wiggle effect on artist hover
 		const addWiggleEffect = () => {
 			cursor.style.background = '#0066cc';
-			cursor.style.animation = 'cursor-wiggle 0.8s ease-in-out infinite';
-			cursor.style.width = '50px';
+			cursor.style.animation = 'cursor-wave 1.2s ease-in-out infinite';
+			cursor.style.width = '80px';
 		};
 		
 		const removeWiggleEffect = () => {
 			cursor.style.background = 'rgba(0, 0, 0, 0.8)';
 			cursor.style.animation = 'none';
-			cursor.style.width = '40px';
+			cursor.style.width = '60px';
 		};
 		
 		// Add event listeners

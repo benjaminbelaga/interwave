@@ -65,3 +65,28 @@
 		border: 1px solid $color-bg-item1;
 	}
 }
+
+.site-nav {
+	ul.nav-list {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		display: flex;
+		gap: 2.5rem;
+
+		li {
+			.nav-link {
+				color: rgba(0, 0, 0, 0.7);
+				text-decoration: none;
+				font-size: 1.05rem;
+				font-weight: 300;
+				transition: color 0.3s ease;
+				letter-spacing: -0.01em;
+
+				&:hover {
+					color: rgba(0, 0, 0, 0.9);
+				}
+			}
+		}
+	}
+}

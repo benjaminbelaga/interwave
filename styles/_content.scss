@@ -99,12 +99,15 @@
 	50% { opacity: 0.6; transform: rotate(-15deg) scale(1.05); }
 }
 
-/* Cursor wiggle animation */
-@keyframes cursor-wiggle {
-	0%, 100% { transform: translate(-50%, -50%) rotate(-15deg) translateY(0); }
-	25% { transform: translate(-50%, -50%) rotate(-12deg) translateY(-2px); }
-	50% { transform: translate(-50%, -50%) rotate(-18deg) translateY(1px); }
-	75% { transform: translate(-50%, -50%) rotate(-14deg) translateY(-1px); }
+/* Cursor wave animation */
+@keyframes cursor-wave {
+	0%   { transform: translate(-50%, -50%) rotate(-15deg) translateY(0); }
+	16%  { transform: translate(-50%, -50%) rotate(-15deg) translateY(-4px); }
+	33%  { transform: translate(-50%, -50%) rotate(-15deg) translateY(4px); }
+	50%  { transform: translate(-50%, -50%) rotate(-15deg) translateY(-4px); }
+	66%  { transform: translate(-50%, -50%) rotate(-15deg) translateY(4px); }
+	83%  { transform: translate(-50%, -50%) rotate(-15deg) translateY(-4px); }
+	100% { transform: translate(-50%, -50%) rotate(-15deg) translateY(0); }
 }
 
 /* Interwave title - stylized like Ekipa */
@@ -391,5 +394,28 @@ body {
 @media (max-width: 768px) {
 	#cursor-line {
 		display: none;
+	}
+}
+
+/* Adjust default cursor line size */
+#cursor-line {
+	width: 60px;
+	height: 3px;
+}
+
+/* Decorative blue wave group */
+.blue-wave {
+	position: absolute;
+	z-index: 0;
+	opacity: 0.15;
+	pointer-events: none;
+	stroke-width: 2px;
+	
+	&.wave-group-1 {
+		top: 12%;
+		left: 18%;
+		width: 500px;
+		height: auto;
+		transform: rotate(-5deg);
 	}
 }

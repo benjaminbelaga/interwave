@@ -9,10 +9,10 @@ const Footer = () => {
 			<div className="footer-content">
 				<div className="footer-section">
 					<a 
-						href="mailto:contact@interwave.live" 
+						href="mailto:booking@interwave.live" 
 						className="footer-link footer-email"
 					>
-						contact@interwave.live
+						booking@interwave.live
 					</a>
 				</div>
 				
