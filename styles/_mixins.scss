@@ -1,0 +1,43 @@
+@mixin min-lg() {
+	@media (min-width: 1400px) {
+		@content;
+	}
+}
+
+@mixin max-lg() {
+	@media (min-width: 1399.99px) {
+		@content;
+	}
+}
+
+@mixin min-md() {
+	@media (min-width: 1200px) {
+		@content;
+	}
+}
+
+@mixin max-md() {
+	@media (min-width: 1199.99px) {
+		@content;
+	}
+}
+
+@mixin min-sm() {
+	@media (min-width: 768px) {
+		@content;
+	}
+}
+
+@mixin max-sm() {
+	@media (min-width: 767.99px) {
+		@content;
+	}
+}
+
+@mixin clearfix() {
+	&::after {
+		display: block;
+		clear: both;
+		content: "";
+	}
+}

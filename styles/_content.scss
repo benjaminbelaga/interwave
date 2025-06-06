@@ -1,0 +1,510 @@
+/**
+ * Main Content - Ekipa agency artistic design with wave patterns
+ */
+
+/* Site content */
+.site-content {
+	width: 100%;
+	min-height: 100vh;
+	position: relative;
+	overflow: hidden;
+	padding-top: 6rem; /* Account for fixed header */
+}
+
+/* Artists grid layout - Enhanced Ekipa style with wave patterns */
+.artists-grid-wrapper {
+	position: relative;
+	width: 100%;
+	min-height: calc(100vh - 6rem);
+	padding: 3rem 5%;
+	
+	/* Geometric background elements like Ekipa */
+	&::before {
+		content: '';
+		position: absolute;
+		top: 10%;
+		left: 5%;
+		width: 120px;
+		height: 8px;
+		background: rgba(0, 0, 0, 0.8);
+		transform: rotate(-25deg);
+		z-index: 0;
+	}
+	
+	&::after {
+		content: '';
+		position: absolute;
+		top: 25%;
+		right: 8%;
+		width: 80px;
+		height: 6px;
+		background: rgba(0, 0, 0, 0.8);
+		transform: rotate(45deg);
+		z-index: 0;
+	}
+}
+
+/* Subtle wave background patterns */
+.wave-bg {
+	position: absolute;
+	z-index: 0;
+	opacity: 0.7;
+	pointer-events: none;
+	
+	&.wave-bg-1 {
+		top: 15%;
+		left: 10%;
+		width: 300px;
+		height: 150px;
+		transform: rotate(-8deg);
+		animation: wave-drift-1 20s ease-in-out infinite;
+	}
+	
+	&.wave-bg-2 {
+		top: 45%;
+		right: 15%;
+		width: 250px;
+		height: 125px;
+		transform: rotate(12deg);
+		animation: wave-drift-2 25s ease-in-out infinite;
+	}
+	
+	&.wave-bg-3 {
+		bottom: 20%;
+		left: 20%;
+		width: 280px;
+		height: 140px;
+		transform: rotate(-5deg);
+		animation: wave-drift-3 30s ease-in-out infinite;
+	}
+	
+	path {
+		stroke-linecap: round;
+		stroke-linejoin: round;
+	}
+}
+
+/* Wave drift animations */
+@keyframes wave-drift-1 {
+	0%, 100% { transform: rotate(-8deg) translateY(0); }
+	50% { transform: rotate(-6deg) translateY(-10px); }
+}
+
+@keyframes wave-drift-2 {
+	0%, 100% { transform: rotate(12deg) translateY(0); }
+	50% { transform: rotate(10deg) translateY(8px); }
+}
+
+@keyframes wave-drift-3 {
+	0%, 100% { transform: rotate(-5deg) translateY(0); }
+	50% { transform: rotate(-3deg) translateY(-6px); }
+}
+
+/* Additional geometric elements */
+.artists-grid-wrapper {
+	.geo-element {
+		position: absolute;
+		background: rgba(0, 0, 0, 0.8);
+		z-index: 1;
+		transition: all 0.3s ease;
+		
+		&:nth-child(5) {
+			top: 40%;
+			left: 2%;
+			width: 60px;
+			height: 4px;
+			transform: rotate(-45deg);
+		}
+		
+		&:nth-child(6) {
+			top: 60%;
+			right: 15%;
+			width: 100px;
+			height: 6px;
+			transform: rotate(35deg);
+		}
+		
+		&:nth-child(7) {
+			bottom: 20%;
+			left: 10%;
+			width: 140px;
+			height: 8px;
+			transform: rotate(-15deg);
+		}
+		
+		&:nth-child(8) {
+			bottom: 35%;
+			right: 5%;
+			width: 90px;
+			height: 5px;
+			transform: rotate(60deg);
+		}
+		
+		/* Blue accent element */
+		&.blue-accent {
+			background: #0066cc;
+			opacity: 0.8;
+			animation: blue-pulse 4s ease-in-out infinite;
+		}
+	}
+}
+
+/* Blue accent animation */
+@keyframes blue-pulse {
+	0%, 100% { opacity: 0.8; transform: rotate(-15deg) scale(1); }
+	50% { opacity: 0.6; transform: rotate(-15deg) scale(1.05); }
+}
+
+/* Interwave title - more stylized like Ekipa */
+.interwave-title {
+	position: relative;
+	font-family: 'Inter', 'Helvetica Neue', 'Arial', sans-serif;
+	font-size: clamp(2.5rem, 8vw, 6rem);
+	font-weight: 200;
+	color: rgba(0, 0, 0, 0.85);
+	letter-spacing: -0.04em;
+	text-transform: lowercase;
+	margin-bottom: 4rem;
+	z-index: 2;
+	
+	@media (max-width: 768px) {
+		font-size: 2.8rem;
+		margin-bottom: 3rem;
+	}
+}
+
+/* Artists grid - enhanced styling */
+.artists-grid {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+	gap: 2.5rem 4rem;
+	position: relative;
+	z-index: 2;
+	
+	@media (max-width: 768px) {
+		grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+		gap: 2rem 2.5rem;
+	}
+}
+
+.artists-grid li {
+	margin: 0;
+	position: relative;
+}
+
+/* Enhanced artist links */
+.artists-grid .artist-link {
+	position: static;
+	display: inline-block;
+	font-family: 'Inter', 'Helvetica Neue', 'Arial', sans-serif;
+	font-size: 1.1rem;
+	font-weight: 400;
+	padding: 0.6rem 0;
+	background: transparent;
+	color: rgba(0, 0, 0, 0.8);
+	text-decoration: none;
+	transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+	letter-spacing: -0.01em;
+	line-height: 1.3;
+	
+	&:hover {
+		color: #ffffff;
+		background: #0066cc;
+		padding: 0.6rem 1rem;
+		border-radius: 2px;
+		transform: translateY(-1px);
+		box-shadow: 0 4px 12px rgba(0, 102, 204, 0.25);
+	}
+	
+	@media (max-width: 768px) {
+		font-size: 1rem;
+	}
+}
+
+/* News and About pages */
+.news-container,
+.about-container,
+.newsletter-container {
+	max-width: 900px;
+	margin: 0 auto;
+	padding: 4rem 3rem;
+	position: relative;
+	
+	h1 {
+		font-size: clamp(2.5rem, 8vw, 5rem);
+		font-weight: 200;
+		margin-bottom: 4rem;
+		color: rgba(0, 0, 0, 0.9);
+		letter-spacing: -0.04em;
+	}
+	
+	p {
+		font-size: 1.2rem;
+		line-height: 1.8;
+		margin-bottom: 2rem;
+		color: rgba(0, 0, 0, 0.75);
+		font-weight: 300;
+	}
+}
+
+/* Artist info pages */
+.artist-info {
+	max-width: 1100px;
+	margin: 0 auto;
+	padding: 4rem 3rem;
+	
+	.entry-header {
+		margin-bottom: 4rem;
+		
+		.entry-title {
+			font-size: clamp(3rem, 10vw, 6rem);
+			font-weight: 200;
+			color: rgba(0, 0, 0, 0.9);
+			margin-bottom: 1.5rem;
+			letter-spacing: -0.04em;
+		}
+	}
+	
+	.artist-bio {
+		font-size: 1.2rem;
+		line-height: 1.8;
+		margin-bottom: 4rem;
+		color: rgba(0, 0, 0, 0.75);
+		font-weight: 300;
+		max-width: 700px;
+	}
+	
+	.artist-meta {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 1.5rem;
+		margin-bottom: 4rem;
+		
+		> a,
+		> span {
+			padding: 1rem 2rem;
+			background: rgba(0, 0, 0, 0.04);
+			color: rgba(0, 0, 0, 0.7);
+			text-decoration: none;
+			font-size: 0.95rem;
+			font-weight: 400;
+			transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+			border-radius: 1px;
+			
+			&:hover {
+				background: #0066cc;
+				color: #ffffff;
+				transform: translateY(-1px);
+				box-shadow: 0 4px 12px rgba(0, 102, 204, 0.25);
+			}
+		}
+	}
+	
+	.flex-row {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 4rem;
+		
+		.flex-col {
+			flex: 1;
+			min-width: 280px;
+		}
+		
+		.social,
+		.contact,
+		.resident-advisor {
+			h5 {
+				font-size: 1.3rem;
+				font-weight: 400;
+				margin-bottom: 2rem;
+				color: rgba(0, 0, 0, 0.9);
+				letter-spacing: -0.02em;
+			}
+			
+			a {
+				display: block;
+				color: rgba(0, 0, 0, 0.7);
+				text-decoration: none;
+				margin-bottom: 1rem;
+				font-weight: 300;
+				font-size: 1.05rem;
+				transition: color 0.3s ease;
+				
+				&:hover {
+					color: #0066cc;
+				}
+			}
+		}
+	}
+}
+
+/* Embed content */
+.embed-content {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+	gap: 3rem;
+	margin: 4rem 0;
+	
+	.embed-block {
+		background: rgba(0, 0, 0, 0.02);
+		padding: 2rem;
+		border-radius: 1px;
+	}
+}
+
+/* Error 404 */
+.error-404 {
+	text-align: center;
+	padding: 6rem 3rem;
+	
+	.entry-header {
+		margin-bottom: 4rem;
+		
+		.entry-title {
+			font-size: clamp(5rem, 18vw, 10rem);
+			font-weight: 200;
+			color: rgba(0, 0, 0, 0.9);
+			letter-spacing: -0.06em;
+		}
+	}
+	
+	p {
+		font-size: 1.3rem;
+		margin-bottom: 4rem;
+		color: rgba(0, 0, 0, 0.7);
+		font-weight: 300;
+	}
+	
+	a {
+		color: rgba(0, 0, 0, 0.7);
+		text-decoration: none;
+		padding: 1.2rem 3rem;
+		border: 1px solid rgba(0, 0, 0, 0.2);
+		transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+		font-weight: 300;
+		letter-spacing: 0.05em;
+		text-transform: uppercase;
+		font-size: 0.9rem;
+		
+		&:hover {
+			background: #0066cc;
+			color: #fff;
+			border-color: #0066cc;
+			transform: translateY(-1px);
+			box-shadow: 0 4px 12px rgba(0, 102, 204, 0.25);
+		}
+	}
+}
+
+/* CSS for making ReactPlayer responsive */
+.player-wrapper {
+	position: relative;
+	padding-top: 56.25%;
+	width: 100%;
+	overflow: hidden;
+}
+
+.react-player {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+/* Booking Container */
+.booking-page {
+	background: transparent;
+	padding: 4rem 3rem;
+	
+	#gigwell-container {
+		max-width: 900px;
+		margin: 0 auto;
+	}
+}
+
+/* Custom animated wave cursor */
+#cursor-wave {
+	position: fixed;
+	top: 0;
+	left: 0;
+	pointer-events: none;
+	transform: translate(-50%, -50%);
+	transition: all 0.15s ease;
+	z-index: 9999;
+	
+	svg {
+		width: 50px;
+		height: 25px;
+		
+		.wave-path {
+			stroke: rgba(0, 0, 0, 0.6);
+			stroke-width: 2;
+			fill: none;
+			animation: wave-flow 3s ease-in-out infinite;
+			stroke-dasharray: 8, 4;
+			stroke-dashoffset: 0;
+			stroke-linecap: round;
+		}
+	}
+	
+	&.hovering {
+		transform: translate(-50%, -50%) scale(1.2);
+		
+		.wave-path {
+			stroke: #0066cc;
+			stroke-width: 3;
+			animation: wave-flow-hover 1.5s ease-in-out infinite;
+		}
+	}
+}
+
+/* Wave animation keyframes */
+@keyframes wave-flow {
+	0% {
+		stroke-dashoffset: 0;
+		d: path("M0,12 Q12,6 25,12 T50,12");
+	}
+	50% {
+		stroke-dashoffset: 12;
+		d: path("M0,12 Q12,18 25,12 T50,12");
+	}
+	100% {
+		stroke-dashoffset: 24;
+		d: path("M0,12 Q12,6 25,12 T50,12");
+	}
+}
+
+@keyframes wave-flow-hover {
+	0% {
+		stroke-dashoffset: 0;
+		d: path("M0,12 Q10,4 25,12 T50,12");
+	}
+	50% {
+		stroke-dashoffset: 18;
+		d: path("M0,12 Q15,20 25,12 T50,12");
+	}
+	100% {
+		stroke-dashoffset: 36;
+		d: path("M0,12 Q10,4 25,12 T50,12");
+	}
+}
+
+/* Hide default cursor */
+body {
+	cursor: none;
+	
+	@media (max-width: 768px) {
+		cursor: auto;
+	}
+}
+
+/* Ensure mobile doesn't show custom cursor */
+@media (max-width: 768px) {
+	#cursor-wave {
+		display: none;
+	}
+}

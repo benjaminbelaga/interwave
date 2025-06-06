@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.interwave.live
+
+# Sitemaps
+Sitemap: https://www.interwave.live/sitemap.xml
