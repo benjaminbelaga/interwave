@@ -1,34 +1,37 @@
 import Link from "next/link";
-
-import { SITE_TITLE } from "../../constants/seo";
+import PropTypes from "prop-types";
 
 /**
- * Displays the header content with minimal navigation like Ekipa agency.
- *
- * @returns {JSX.Element} The rendered header component.
+ * Site Header - Ekipa agency inspired minimal navigation
  */
-const Header = () => {
+const Header = ({ menu = [] }) => {
 	return (
-		<>
-			<header id="site-header" className="site-header">
-				{/* Simple navigation like Ekipa agency */}
-				<nav className="main-nav">
-					<ul>
-						<li>
-							<Link href="/">Artists</Link>
-						</li>
-						<li>
-							<Link href="/news">News</Link>
-						</li>
-						<li>
-							<Link href="/about">About</Link>
-						</li>
-					</ul>
-				</nav>
-			</header>
-		</>
+		<header className="site-header">
+			<nav className="site-nav">
+				<ul className="nav-list">
+					<li>
+						<Link href="/artists" className="nav-link">
+							Artists
+						</Link>
+					</li>
+					<li>
+						<Link href="/news" className="nav-link">
+							News
+						</Link>
+					</li>
+					<li>
+						<Link href="/about" className="nav-link">
+							About
+						</Link>
+					</li>
+				</ul>
+			</nav>
+		</header>
 	);
 };
 
-// Export the Header component
+Header.propTypes = {
+	menu: PropTypes.array,
+};
+
 export default Header;
