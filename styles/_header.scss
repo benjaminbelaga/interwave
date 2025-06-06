@@ -1,5 +1,5 @@
 /**
- * Header - Academic book design
+ * Header - Ekipa inspired simple design
  */
 
 /* Header */
@@ -8,9 +8,9 @@
 	top: 0;
 	left: 0;
 	right: 0;
-	padding: 2rem 2rem 1rem;
-	background: #f4c2c2;
-	border-bottom: 2px solid rgba(211, 47, 47, 0.2);
+	padding: 2rem;
+	background: #f8f8f8;
+	border-bottom: 1px solid #e5e5e5;
 	z-index: 1000;
 }
 
@@ -20,7 +20,7 @@
 		margin: 0;
 		padding: 0;
 		display: flex;
-		gap: 4rem;
+		gap: 3rem;
 		justify-content: center;
 
 		@media (max-width: 768px) {
@@ -29,19 +29,30 @@
 
 		li {
 			.nav-link {
-				color: #d32f2f;
+				color: #333;
 				text-decoration: none;
 				font-size: 1.1rem;
-				font-weight: normal;
+				font-weight: 400;
 				transition: all 0.3s ease;
-				letter-spacing: 0.02em;
-				font-family: 'Times New Roman', 'Times', serif;
-				padding: 0.5rem 0;
-				border-bottom: 1px solid transparent;
+				position: relative;
+
+				&::after {
+					content: '';
+					position: absolute;
+					bottom: -5px;
+					left: 0;
+					width: 0;
+					height: 2px;
+					background: #1e40af;
+					transition: width 0.3s ease;
+				}
 
 				&:hover {
-					border-bottom-color: #d32f2f;
-					font-weight: bold;
+					color: #1e40af;
+					
+					&::after {
+						width: 100%;
+					}
 				}
 			}
 		}

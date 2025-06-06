@@ -10,10 +10,10 @@ import Header from "./Header";
  */
 const PageTemplate = ({ children }) => {
 	useEffect(() => {
-		// Set academic book background color
-		document.documentElement.style.setProperty('--bg-color', '#f4c2c2');
+		// Set Ekipa-style background color
+		document.documentElement.style.setProperty('--bg-color', '#f8f8f8');
 		
-		// Academic book cursor
+		// Blue cursor for Ekipa theme
 		const cursor = document.createElement('div');
 		cursor.id = 'cursor-line';
 		cursor.style.cssText = `
@@ -22,7 +22,7 @@ const PageTemplate = ({ children }) => {
 			left: 0;
 			width: 60px;
 			height: 2px;
-			background: rgba(211, 47, 47, 0.8);
+			background: rgba(30, 64, 175, 0.8);
 			pointer-events: none;
 			transform: translate(-50%, -50%) rotate(-15deg);
 			transition: all 0.08s ease;
@@ -37,13 +37,13 @@ const PageTemplate = ({ children }) => {
 		
 		// Wiggle effect on artist hover
 		const addWiggleEffect = () => {
-			cursor.style.background = '#d32f2f';
+			cursor.style.background = '#1e40af';
 			cursor.style.animation = 'cursor-wave 1.2s ease-in-out infinite';
 			cursor.style.width = '80px';
 		};
 		
 		const removeWiggleEffect = () => {
-			cursor.style.background = 'rgba(211, 47, 47, 0.8)';
+			cursor.style.background = 'rgba(30, 64, 175, 0.8)';
 			cursor.style.animation = 'none';
 			cursor.style.width = '60px';
 		};
@@ -52,7 +52,7 @@ const PageTemplate = ({ children }) => {
 		document.addEventListener('mousemove', moveCursor);
 		
 		// Add wiggle effects to artist links
-		const artistLinks = document.querySelectorAll('.artist-link-text');
+		const artistLinks = document.querySelectorAll('.artist-item');
 		artistLinks.forEach(link => {
 			link.addEventListener('mouseenter', addWiggleEffect);
 			link.addEventListener('mouseleave', removeWiggleEffect);

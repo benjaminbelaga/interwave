@@ -1,27 +1,8 @@
 /**
- * Simple footer - Japanese minimalist design
+ * Minimal footer - integrated into main layout
  */
 const Footer = () => {
-	return (
-		<footer className="site-footer">
-			<div className="footer-content">
-				<div className="footer-section">
-					<a 
-						href="mailto:booking@interwave.live" 
-						className="footer-link footer-email"
-					>
-						booking@interwave.live
-					</a>
-				</div>
-				
-				<div className="footer-section">
-					<a href="/instagram" className="footer-link">
-						Instagram
-					</a>
-				</div>
-			</div>
-		</footer>
-	);
+	return null; // Footer content is now integrated in the main layout
 };
 
 export default Footer;
