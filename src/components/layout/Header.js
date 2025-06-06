@@ -1,5 +1,4 @@
 import Link from "next/link";
-import PropTypes from "prop-types";
 
 /**
  * Site Header - Ekipa agency inspired minimal navigation
@@ -29,7 +28,5 @@ const Header = () => {
 		</header>
 	);
 };
-
-Header.propTypes = {};
 
 export default Header;

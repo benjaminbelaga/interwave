@@ -1,5 +1,4 @@
 import Link from "next/link";
-import PropTypes from "prop-types";
 
 /**
  * Site Footer - Ekipa style minimal footer
@@ -34,7 +33,5 @@ const Footer = () => {
 		</footer>
 	);
 };
-
-Footer.propTypes = {};
 
 export default Footer;
