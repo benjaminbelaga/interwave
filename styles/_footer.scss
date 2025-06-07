@@ -1,0 +1,44 @@
+/**
+ * Dark Mode Footer - Ekipa Inspired Design
+ */
+
+.site-footer {
+	margin-top: auto;
+	padding: 2rem 0 1rem;
+	border-top: 1px solid $color-border;
+	position: relative;
+	z-index: 10;
+}
+
+.footer-content {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	gap: 1rem;
+	font-size: $font-size-sm;
+
+	@media (max-width: 768px) {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 0.75rem;
+	}
+}
+
+.footer-email,
+.footer-social {
+	color: $color-text-primary;
+	text-decoration: none;
+	transition: color 0.2s ease;
+
+	&:hover,
+	&:focus-visible {
+		color: $primary;
+		outline: none;
+	}
+}
+
+.footer-copyright {
+	color: $color-text-secondary;
+	font-size: $font-size-sm;
+}
