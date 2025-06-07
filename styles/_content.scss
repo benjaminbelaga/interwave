@@ -435,3 +435,69 @@
 		}
 	}
 }
+
+/* Tech Rider and Press Kit multiple buttons */
+.tech-rider-group,
+.press-kit-group {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+
+	.tech-rider,
+	.press-kit {
+		display: inline-flex;
+		align-items: center;
+		padding: 0.5rem 1rem;
+		background: transparent;
+		border: 1px solid $color-border;
+		color: $color-text-primary;
+		text-decoration: none;
+		font-size: $font-size-sm;
+		font-weight: $font-weight-normal;
+		text-transform: capitalize;
+		transition: color 0.2s ease, border-color 0.2s ease;
+		min-width: fit-content;
+
+		svg {
+			width: 0.875rem;
+			height: 0.875rem;
+			margin-left: 0.5rem;
+		}
+
+		&:hover,
+		&:focus-visible {
+			color: $primary;
+			border-color: $primary;
+			outline: none;
+		}
+
+		&.tech-rider-live,
+		&.press-kit-live {
+			border-color: rgba($primary, 0.6);
+			color: rgba($color-text-primary, 0.95);
+
+			&:hover,
+			&:focus-visible {
+				border-color: $primary;
+				color: $primary;
+			}
+		}
+
+		&.tech-rider-dj,
+		&.press-kit-dj {
+			border-color: rgba($color-text-primary, 0.4);
+			color: rgba($color-text-primary, 0.85);
+
+			&:hover,
+			&:focus-visible {
+				border-color: $primary;
+				color: $primary;
+			}
+		}
+	}
+
+	@media (min-width: 768px) {
+		flex-direction: row;
+		gap: 0.75rem;
+	}
+}
