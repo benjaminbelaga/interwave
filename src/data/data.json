@@ -46,58 +46,6 @@
     }
   },
   {
-    "slug": "aline-brooklyn",
-    "title": "Aline Brooklyn",
-    "territory": "Worldwide",
-    "act": "DJ",
-    "bio": "Aline Brooklyn is a dynamic force in the world of electronic music, known for his innovative soundscapes and collaborative spirit.\n\nAfter spending over a decade in New York mastering his craft across a variety of projects, Aline Brooklyn returned to Paris three years ago, where he embarked on new musical ventures.\n\nHe is one half of a captivating live duo with Aman Umber, delivering unique performances that feature guest instrumentalists from the countries they visit, ensuring every show is an unrepeatable experience. Aline also co-founded the label Airfunk Records alongside Maxime dB, focusing on electronic music infused with pop influences and the vibrant spirit of 2000s electro.\n\nIn Paris, Aline and his creative partners expanded the Imagine Family collective, which began as a small beach festival in the south of France, into a growing hub for artistic collaboration.\n\nAs a producer, Aline devotes himself to crafting emotionally resonant and innovative music. He frequently collaborates with artists like Obee, Aman Umber, Maxime dB, and Krol to push creative boundaries. His upcoming release, Album Part II, on his longstanding label A.B. Records, showcases original compositions from a live performance at the iconic Cabaret Sauvage, featuring a blend of electronic and live instrumentation.",
-    "contact_email": "booking@interwave.live",
-    "resident_advisor": "https://ra.co/dj/Alinebrooklyn",
-    "social": [
-      {
-        "id": "soundcloud",
-        "name": "Soundcloud",
-        "url": "https://soundcloud.com/alinebrooklynrecords"
-      },
-      {
-        "id": "instagram",
-        "name": "Instagram",
-        "url": "https://www.instagram.com/alinebrooklyn_/?hl=en"
-      }
-    ],
-    "links": [
-      "https://www.youtube.com/watch?v=_hTcq9aPZMc",
-      "https://www.youtube.com/watch?v=gHfP07Iyjng"
-    ],
-    "tech_rider": "https://www.dropbox.com/scl/fo/8skvbur39hofkk94kprvg/ALBLuaCqp6CbDDE27YQmZTg?rlkey=nh3uh65sp2k4yis1rx6r126vv&st=yu3u4qcq&dl=0",
-    "press_kit": "https://www.dropbox.com/scl/fo/mtsaoa720ge1ykufanbcy/AMMJ8cQMUt17XkudiTrJ8ck?rlkey=7buhzijgfsgfcu91st0xe28qm&st=ep2t5wz0&dl=0"
-  },
-  {
-    "slug": "aman-umber",
-    "title": "Aman Umber",
-    "territory": "Worldwide",
-    "act": "DJ",
-    "bio": "",
-    "contact_email": "booking@interwave.live",
-    "resident_advisor": "https://ra.co/dj/amanumber",
-    "social": [
-      {
-        "id": "soundcloud",
-        "name": "Soundcloud",
-        "url": "https://soundcloud.com/amanumber"
-      },
-      {
-        "id": "instagram",
-        "name": "Instagram",
-        "url": "https://www.instagram.com/amanumber_/?hl=en"
-      }
-    ],
-    "links": [
-      "https://www.youtube.com/watch?v=25BtFGPvYKc",
-      "https://www.youtube.com/watch?v=G6kGW4qTLJs"
-    ]
-  },
-  {
     "slug": "anna-wall",
     "title": "Anna Wall",
     "territory": "Worldwide",
