@@ -1,15 +1,7 @@
 /* eslint-disable react/no-unknown-property */
-import { Montserrat } from "next/font/google";
 import PropTypes from "prop-types"; // Import PropTypes for prop type checking.
 
 import "../styles/style.scss"; // Import global styles
-
-// Configure the Montserrat font.
-const montserrat = Montserrat({
-	subsets: ["latin"],
-	weight: ["300", "400", "500", "600", "700", "800", "900"],
-	style: ["normal", "italic"],
-});
 
 /**
  * Custom App component that wraps all pages in the Next.js application.
@@ -25,16 +17,7 @@ const montserrat = Montserrat({
  */
 export default function MyApp({ Component, pageProps }) {
 	// Render the specific page component with its props
-	return (
-		<>
-			<style jsx global>{`
-				:root {
-					--font-montserrat: ${montserrat.style.fontFamily};
-				}
-			`}</style>
-			<Component {...pageProps} />
-		</>
-	);
+	return <Component {...pageProps} />;
 }
 
 // Define prop types for MyApp component

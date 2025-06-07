@@ -74,7 +74,7 @@ const WaveEffect = () => {
                         170 + seededRandom(sessionSeed + i * 53) * 40,   // Cyan-bleu mixte (170-210)
                     
                     // Opacité variable
-                    opacity: (0.5 - i * 0.08) * (0.6 + seededRandom(sessionSeed + i * 55) * 0.5),
+                    opacity: (0.7 - i * 0.1) * (0.7 + seededRandom(sessionSeed + i * 55) * 0.4),
                     
                     // Propriétés uniques
                     direction: layerDirection,
@@ -181,18 +181,19 @@ const WaveEffect = () => {
                 ctx.save();
                 
                 // Couleur qui change avec la position verticale de la souris
-                const saturation = 60 + mouseDistance * 40 + layer.complexity * 20;
-                const lightness = 40 + mouseY * 25 + (layer.isPulsing ? Math.sin(time * layer.pulseSpeed) * 10 : 0);
-                let alpha = layer.opacity * (0.7 + mouseY * 0.5);
+                const saturation = 70 + mouseDistance * 30 + layer.complexity * 15;
+                const lightness = 50 + mouseY * 20 + (layer.isPulsing ? Math.sin(time * layer.pulseSpeed) * 8 : 0);
+                let alpha = layer.opacity * (0.8 + mouseY * 0.3);
                 
                 // Effet de clignotement pour les couches avec pauses
                 if (layer.hasBreaks && Math.sin(time * layer.breakFrequency) < -0.5) {
-                    alpha *= 0.3;
+                    alpha *= 0.4;
                 }
                 
                 ctx.strokeStyle = `hsla(${layer.hue}, ${saturation}%, ${lightness}%, ${alpha})`;
-                ctx.lineWidth = 2.8 - index * 0.4;
-                ctx.lineCap = 'round';
+                ctx.lineWidth = 1.8 - index * 0.2;
+                ctx.lineCap = 'butt';
+                ctx.lineJoin = 'miter';
 
                 // Mouse influence horizontal (amplitude)
                 const horizontalInfluence = 1 + mouseDistance * 0.7 * (1 - index * 0.1);
@@ -206,7 +207,7 @@ const WaveEffect = () => {
 
                 // Create wave path
                 ctx.beginPath();
-                for (let x = 0; x <= canvas.width; x += 2.5) { // Pas plus large pour fluidité
+                for (let x = 0; x <= canvas.width; x += 1.5) { // Smaller steps for smoother lines
                     const baseY = canvas.height * layer.baseY + verticalOffset;
                     const waveY = calculateWaveY(x, {
                         ...layer,
