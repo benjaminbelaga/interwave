@@ -4,7 +4,7 @@
     "title": "Aline Umber live",
     "territory": "Worldwide",
     "act": "Live/DJ",
-    "bio": "If you are looking for an electronic music live act that will blow your mind with their creativity and versatility, look no further than Aline Umber. \n\nAline Brooklyn and Aman Umber, both French composers, producers and DJs, started their project in 2022 with the idea of collaborating with local musicians and improvising on the spot. \n\nThe two friends have already worked together to create the Imagine Family collective, have collaborated with Maxime DB for the creation of the Airfunk label and are surrounded and supported by talents such as Obee, Tomas Station, Sweely and more.\n\nAline Brooklyn's fine and energise drums, together with Aman Umber's sexy basslines and cinematic synths, form a music that is colorful, contrasted and engaging. \n\nAlready acclaimed by the public who found a dancing, cheerful and energetic music, their live acts are always refreshing and original, featuring different songs and versions of their releases. \n\nThey made their debut at the famous Parisian Rex Club and have since performed their live act in some of the most renowned venues and events around the world, such as Resolute New York , Nostromo Festival , Riyadh or Miami.\n\nYou will also have the opportuinity to see the two French producers playing eclectic and energised B2B DJ sets.\n\nAline Umber entered Interwave Agency and is now ready to share their first album with their fans.",
+    "bio": "If you are looking for an electronic music live act that will blow your mind with their creativity and versatility, look no further than Aline Umber.\n\nAline Brooklyn and Aman Umber, both French composers, producers and DJs, started their project in 2022 with the idea of collaborating with local musicians and improvising on the spot.\n\nThe two friends have already worked together to create the Imagine Family collective, have collaborated with Maxime DB for the creation of the Airfunk label and are surrounded and supported by talents such as Obee, Tomas Station, Sweely and more.\n\nAline Brooklyn's fine and energise drums, together with Aman Umber's sexy basslines and cinematic synths, form a music that is colorful, contrasted and engaging.\n\nAlready acclaimed by the public who found a dancing, cheerful and energetic music, their live acts are always refreshing and original, featuring different songs and versions of their releases.\n\nThey made their debut at the famous Parisian Rex Club and have since performed their live act in some of the most renowned venues and events around the world, such as Resolute New York , Nostromo Festival , Riyadh or Miami.\n\nYou will also have the opportuinity to see the two French producers playing eclectic and energised B2B DJ sets.\n\nAline Umber entered Interwave Agency and is now ready to share their first album with their fans.",
     "contact_email": "booking@interwave.live",
     "resident_advisor": "https://ra.co/dj/alineumber",
     "social": [
@@ -17,24 +17,11 @@
         "id": "instagram",
         "name": "Instagram",
         "url": "https://www.instagram.com/alineumberlive/"
-      },
-      {
-        "id": "discogs",
-        "name": "Discogs",
-        "url": "https://www.discogs.com/fr/artist/11989454-Aline-Umber"
       }
     ],
     "links": [
-      {
-        "id": "youtube",
-        "name": "Youtube",
-        "url": "https://www.youtube.com/watch?v=tfrcHxDPmao&pp=ygUKQW1hbiBVbWJlcg%3D%3D"
-      },
-      {
-        "id": "youtube_2",
-        "name": "Youtube 2",
-        "url": "https://www.youtube.com/watch?v=TbDn7L1Arts"
-      }
+      "https://www.youtube.com/watch?v=tfrcHxDPmao&pp=ygUKQW1hbiBVbWJlcg%3D%3D",
+      "https://www.youtube.com/watch?v=TbDn7L1Arts"
     ],
     "tech_rider": {
       "live": "https://www.dropbox.com/sh/cmx0k3qjgq9g2th/AADduyCd2OagzTKAkdfvLkcPa?dl=0",
@@ -46,11 +33,63 @@
     }
   },
   {
+    "slug": "aline-brooklyn",
+    "title": "Aline Brooklyn",
+    "territory": "Worldwide",
+    "act": "DJ",
+    "bio": "Aline Brooklyn is a dynamic force in the world of electronic music, known for his innovative soundscapes and collaborative spirit.\n\nAfter spending over a decade in New York mastering his craft across a variety of projects, Aline Brooklyn returned to Paris three years ago, where he embarked on new musical ventures.\n\nHe is one half of a captivating live duo with Aman Umber, delivering unique performances that feature guest instrumentalists from the countries they visit, ensuring every show is an unrepeatable experience. Aline also co-founded the label Airfunk Records alongside Maxime dB, focusing on electronic music infused with pop influences and the vibrant spirit of 2000s electro.\n\nIn Paris, Aline and his creative partners expanded the Imagine Family collective, which began as a small beach festival in the south of France, into a growing hub for artistic collaboration.\n\nAs a producer, Aline devotes himself to crafting emotionally resonant and innovative music. He frequently collaborates with artists like Obee, Aman Umber, Maxime dB, and Krol to push creative boundaries. His upcoming release, Album Part II, on his longstanding label A.B. Records, showcases original compositions from a live performance at the iconic Cabaret Sauvage, featuring a blend of electronic and live instrumentation.",
+    "contact_email": "booking@interwave.live",
+    "resident_advisor": "https://ra.co/dj/Alinebrooklyn",
+    "social": [
+      {
+        "id": "soundcloud",
+        "name": "Soundcloud",
+        "url": "https://soundcloud.com/alinebrooklynrecords"
+      },
+      {
+        "id": "instagram",
+        "name": "Instagram",
+        "url": "https://www.instagram.com/alinebrooklyn_/?hl=en"
+      }
+    ],
+    "links": [
+      "https://www.youtube.com/watch?v=_hTcq9aPZMc",
+      "https://www.youtube.com/watch?v=gHfP07Iyjng"
+    ],
+    "tech_rider": "https://www.dropbox.com/scl/fo/8skvbur39hofkk94kprvg/ALBLuaCqp6CbDDE27YQmZTg?rlkey=nh3uh65sp2k4yis1rx6r126vv&st=yu3u4qcq&dl=0",
+    "press_kit": "https://www.dropbox.com/scl/fo/mtsaoa720ge1ykufanbcy/AMMJ8cQMUt17XkudiTrJ8ck?rlkey=7buhzijgfsgfcu91st0xe28qm&st=ep2t5wz0&dl=0"
+  },
+  {
+    "slug": "aman-umber",
+    "title": "Aman Umber",
+    "territory": "Worldwide",
+    "act": "DJ",
+    "bio": "",
+    "contact_email": "booking@interwave.live",
+    "resident_advisor": "https://ra.co/dj/amanumber",
+    "social": [
+      {
+        "id": "soundcloud",
+        "name": "Soundcloud",
+        "url": "https://soundcloud.com/amanumber"
+      },
+      {
+        "id": "instagram",
+        "name": "Instagram",
+        "url": "https://www.instagram.com/amanumber_/?hl=en"
+      }
+    ],
+    "links": [
+      "https://www.youtube.com/watch?v=25BtFGPvYKc",
+      "https://www.youtube.com/watch?v=G6kGW4qTLJs"
+    ]
+  },
+  {
     "slug": "anna-wall",
     "title": "Anna Wall",
     "territory": "Worldwide",
     "act": "DJ",
-    "bio": "Anna started playing off-grid parties around the capital back in 2010 putting her own London edge on various strains of dance music; from reductionist dub techno to forgotten 90s house, classic techno, electro and acid. She runs an imprint called The Bricks; a vinyl label now into its ninth release with the eighth selling out worldwide. \n\nIn front of a dance floor she truly flourishes - committed, distinctive, and completely versatile, with a record collection built over nineteen years and constantly expanding - she's fine-tuned the art of playing alongside interesting and varied line-ups.\n\nHer monthly Rinse FM show is diverse, alongside her club-focused sets she melds themes from an abundance of genres, playing records found digging in the crates alongside new and unreleased music.\n\nHer recognition outside of the capital continues to grow, playing some of Europe's most highly acclaimed clubs and festivals including Houghton Festival, Fuse in Brussels, Club Tunnel in Serbia, BRET in Amsterdam, Zukunft in Zurich, Hoppetosse in Berlin and Meadows In The Mountains in Bulgaria. In recent years she's also made a name for herself in Latin America touring Mexico, Colombia, Ecuador and Peru. \n\nShe was dubbed 'One To Watch' by Electronic Beats, and launched another label - Dream Theory - exploring sounds across the ambient and experimental spectrum, releasing a critically acclaimed album called 'Missing Moments'. With solo productions and more collaborations in the pipeline it's clear there's plenty more to come for 2025...",
+    "bio": "Anna started playing off-grid parties around the capital back in 2010 putting her own London edge on various strains of dance music; from reductionist dub techno to forgotten 90s house, classic techno, electro and acid. She runs an imprint called The Bricks; a vinyl label now into its ninth release with the eighth selling out worldwide.\n\nIn front of a dance floor she truly flourishes - committed, distinctive, and completely versatile, with a record collection built over nineteen years and constantly expanding - she's fine-tuned the art of playing alongside interesting and varied line-ups.\n\nHer monthly Rinse FM show is diverse, alongside her club-focused sets she melds themes from an abundance of genres, playing records found digging in the crates alongside new and unreleased music.\n\nHer recognition outside of the capital continues to grow, playing some of Europe's most highly acclaimed clubs and festivals including Houghton Festival, Fuse in Brussels, Club Tunnel in Serbia, BRET in Amsterdam, Zukunft in Zurich, Hoppetosse in Berlin and Meadows In The Mountains in Bulgaria. In recent years she's also made a name for herself in Latin America touring Mexico, Colombia, Ecuador and Peru.\n\nShe was dubbed 'One To Watch' by Electronic Beats, and launched another label - Dream Theory - exploring sounds across the ambient and experimental spectrum, releasing a critically acclaimed album called 'Missing Moments'. With solo productions and more collaborations in the pipeline it's clear there's plenty more to come for 2025...",
     "contact_email": "booking@interwave.live",
     "resident_advisor": "https://fr.ra.co/dj/annawall",
     "social": [
@@ -385,6 +424,25 @@
     ]
   },
   {
+    "slug": "hugo-martinez",
+    "title": "Hugo Martinez",
+    "territory": "Worldwide",
+    "act": "DJ",
+    "bio": "1997 Basque Country born and raised, Ibiza based Spanish DJ, Hugo Martinez, was brought up in a scene where underground electronic music plays an outstanding role, a style that caught on him from a very early age.\n\nNot much time had passed, when one of his kin swing by with a mixer.. first contact was made. He displays a talented force, that its distinctive sound, carries one away into a musical paradigm that defies categorization by mixing old and contemporary sounds.\nHis ability to create captivating soundscapes fil of rhythm, has played its role in leading him to quite many successful performances on a wide variety of renowned stages in Ibiza; as well as in many other hot spots in along the Spanish mainland.\nHence, collaborations with prominent promoters and sharing booth chances with established artists started to pop up. Chances that had been taken on the spot...\nWere we to number them, we would list clubs such as Underground Ibiza or Amnesia's family bucolic classy club, Cova Santa; Les enfants (bcn), Goya Club (Madrid) etc... together with a wide variety of partnershipments with local promoters like MTM Ibiza, Pyramid or Game Over.\nNo need to highlight their presence in the vibrant and competitive Ibiza music scene.\nEmbraced by artists such as Raresh, Arapu, Ricardo Villalobos, Federic Molinari and Maher Daniel, stand for his role in the industry.\n\nHugo's international reach can be traced by evidences, as bookings in clubs like Hopetosse and Club der Visionaere in Berlin;Tortuga Club in Italy, Frida's büxe in Zurich or Six Dogs in Greece and Portugal... This suggests that his unique sound and style have resonated beyond his home base, earning him opportunities to display his talent on a global scale. \"Rhythm Point\", his personal venture, is pushing forward; particularly after hosting ten successful showcases in Ibiza. His devotion for this project suggests a passion for developing a lasting impact on the music community.\nThe event showcases a dedication to the artistry and culture where the love for the music and good vibe is a must. The artist's selection is made with caresse, and is reflected in the carefully curated lineup, featuring a main international artist alongside local producers and talents. In essence, \"Rhythm\" appears to be more than just an event; it's a platform where artists and dancers gather in a mass celebration of the same passion for the culture of music.",
+    "contact_email": "booking@interwave.live",
+    "resident_advisor": "https://fr.ra.co/dj/hugomartinez",
+    "social": [
+      {
+        "id": "instagram",
+        "name": "Instagram",
+        "url": "https://www.instagram.com/hugomartinez.musik/"
+      }
+    ],
+    "links": [
+      "https://www.youtube.com/watch?v=0iW5X9JBctA&pp=ygUWaHVnbyBtYXJ0aW5leiBkaiBpYml6YdIHCQl-CQGHKiGM7w%3D%3D"
+    ]
+  },
+  {
     "slug": "hostom",
     "title": "Hostom",
     "territory": "Worldwide",
@@ -410,6 +468,33 @@
       }
     ],
     "links": []
+  },
+  {
+    "slug": "jnjs",
+    "title": "JNJS",
+    "territory": "Worldwide",
+    "act": "DJ",
+    "bio": "The JNJS duo has had their productions played by top DJs such as Raresh, Arapu, Priku, Enzo Siragussa, Traumer, Nu Zau, who select their tracks for their sets at the best clubs and festivals. The videos on Sunwaves of up to 8 artists playing the same JNJS track are well known.\n\nReleases on labels all over the world, from Dias de Campo Records to Uvar, in vinyl or digital format, usually top the charts.\n\nJay Nortown and Jacobo Saavedra are regularly on the line-up of Circoloco Ibiza at DC10, as well as other parties and clubs such as Slapfunk, Pacha, Eden, Rhythm Point in Ibiza, regular gigs at Les Enfants (Barcelona), Sophie Festival (Malaga), Friedas Buxe (Zurich), Club der Visionaire (Berlin), Fabric London and other places in Europe.\n\nIn 2024 they started working with Mahara Bookings, and recently had their first tour in Australia with performances at S.A.S.H and Carousel, and soon they will travel to America for their next tour.\n\nConfirmed dates at Trotamundo, Sunny Side and Dias de Campo festival, they also perform annually in Marrakech and Zanzibar. Precisely here, in Why?Not is another of the brands for those who are residents and perform in different places.\n\nHis label is called Velvet. Only vinyl with music from Silverlining, Triptil, iO Mulen or Alexis Cabrera, also in digital format with artists like Cosenza, Jamahr or Matpri, and a series of events in which they have collaborated with Game Over (One Night Stand), Jazzy or Into The Woods.\n\nWe can say that it is difficult to categorize JNJS in a style, since their main characteristic is that they are eclectic with high energy sessions.",
+    "contact_email": "booking@interwave.live",
+    "resident_advisor": "https://fr.ra.co/dj/jnjs",
+    "social": [
+      {
+        "id": "soundcloud",
+        "name": "Soundcloud",
+        "url": "https://soundcloud.com/jnjsmusic"
+      },
+      {
+        "id": "instagram",
+        "name": "Instagram",
+        "url": "https://www.instagram.com/jnjs.music/"
+      }
+    ],
+    "links": [
+      "https://www.youtube.com/watch?v=Esir1dVXQJA&pp=ygUEam5qcw%3D%3D",
+      "https://www.youtube.com/watch?v=PuduTpKOa8I"
+    ],
+    "tech_rider": "https://www.dropbox.com/scl/fi/8d8jhe16ps84qlkl7q5ji/JNJS-Technical-rider.pdf?rlkey=5fylslh9tkl5x96p97ucx973h&st=tnvfktal&dl=0",
+    "press_kit": "https://www.dropbox.com/scl/fo/c5m9pko66dwrdac9now8o/AFC4TcNZDGOO9xDkLCChnQo?rlkey=2c1b102wa7v21jx3lqvdf4ch0&st=zbsakcqq&dl=0"
   },
   {
     "slug": "jonny-rock",
@@ -570,6 +655,33 @@
     ]
   },
   {
+    "slug": "marite",
+    "title": "Mari.te",
+    "territory": "Worldwide",
+    "act": "DJ",
+    "bio": "Caracas-born DJ and Tresydos label boss Mari.te is an evergrowing presence in the international music panorama. Since moving to Spain in 2018, the year she launched her record label and event series Tresydos, her talent and recognition for elegantly blending a full spectrum of house-infused underground dancefloor music has nothing but grown.\n\nAfter living in New York, where she fostered a close, collaborative relationship with the Resolute crew, Mari.te moved to Spain and kick-started Tresydos, the output for her musical vision and a platform aimed at collaboration with a broad spectrum of talents. Releasing music by friends and artists she admires on both vinyl and digital formats, Tresydos is the reflection of Mari.te's dedication, discipline, and genuine love for dance music.\n\nMari.te's reputation attracted the attention of the most noticeable venues and promoters worldwide in recent years, impacting every city she visits with her humble and charismatic presence and an excitingly danceable, often light-hearted, consistently careful curation of records.",
+    "contact_email": "booking@interwave.live",
+    "resident_advisor": "https://ra.co/dj/marite",
+    "social": [
+      {
+        "id": "soundcloud",
+        "name": "Soundcloud",
+        "url": "https://soundcloud.com/mari_te?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing"
+      },
+      {
+        "id": "instagram",
+        "name": "Instagram",
+        "url": "https://www.instagram.com/_mari.te/?hl=en"
+      }
+    ],
+    "links": [
+      "https://www.youtube.com/watch?v=l2UcVKec6fk&pp=ygUHTWFyaS50ZQ%3D%3D",
+      "https://www.youtube.com/watch?v=NQnO2rbYsZc&pp=ygUHTWFyaS50ZQ%3D%3D"
+    ],
+    "tech_rider": "https://www.dropbox.com/scl/fo/gfum2jdlom33cojswvq4u/AEsNzXA-E_F2ggGSN4Pvmhg?rlkey=6mrb2at8859vdsp5ao8wzgtqz&st=3h35xwlz&dl=0",
+    "press_kit": "https://www.dropbox.com/scl/fo/e1f1lhqb4pvzzk3g7t2ka/AF4USOSlxaVj5eo0Sr6c0cw?rlkey=icu9jxuqkt01qjdp7ts5rmg0s&st=z5o3z8wt&dl=0"
+  },
+  {
     "slug": "magda",
     "title": "Magda",
     "territory": "world wide",
@@ -687,9 +799,9 @@
     "title": "Monile",
     "territory": "Worldwide",
     "act": "DJ",
+    "bio": "From her earliest days, Monile was drawn to electronic music through her older brother; a House, 90's dance and techno record collector.\nHer roots originate from a combination of classic music she used to express playing piano, 90's hip hop, Soul with a touch of jazz and disco.\n\nOn her quest for growth, she is always exploring different genres.\nHer music reflects a rhythmic compassion for deep grooves and enchanting bass lines all-encompassing a wide range of electronic music styles from old school Chicago house and minimal techno to UK breakbeats and Detroit Electro.\n\nWith her broad musical background, her productions and dj-sets incorporate the deep and dub-influenced sound she loves, whilst retaining the driving funk of her musical past.\n\nHer love for music is an endless journey to share with the world.",
     "contact_email": "booking@interwave.live",
     "resident_advisor": "https://www.residentadvisor.net/dj/monile",
-    "bio": "From her earliest days, Monile was drawn to electronic music through her older brother; a House, 90's dance and techno record collector. Her roots originate from a combination of classic music she used to express playing piano, 90's hip hop, Soul with a touch of jazz and disco. On her quest for growth, she is always exploring different genres. Her music reflects a rhythmic compassion for deep grooves and enchanting bass lines all-encompassing a wide range of electronic music styles from old school Chicago house and minimal techno to UK breakbeats and Detroit Electro. With her broad musical background, her productions and dj-sets incorporate the deep and dub-influenced sound she loves, whilst retaining the driving funk of her musical past. Her love for music is an endless journey to share with the world.",
     "social": [
       {
         "id": "soundcloud",
@@ -700,14 +812,13 @@
         "id": "instagram",
         "name": "Instagram",
         "url": "https://www.instagram.com/monile.music/"
-      },
-      {
-        "id": "facebook",
-        "name": "Facebook",
-        "url": "https://www.facebook.com/monilemusic/"
       }
     ],
-    "links": []
+    "links": [
+      "https://www.youtube.com/watch?v=lCnXJIt4-jw&pp=ygUGTW9uaWxl"
+    ],
+    "tech_rider": "https://www.dropbox.com/scl/fo/4oz7re0zdae4b82wi1aj3/AIevRfe8N47gysiwff36arE?rlkey=buud59skt3loypsak2lys6pib&st=r39k6jrp&dl=0",
+    "press_kit": "https://www.dropbox.com/scl/fo/ldmkpo4pamrdyohcn7ymk/AAB1DSt6e_hmzeGTtOtBALc?rlkey=8isgeegasjgsvowskf38n73ao&st=grpmowm6&dl=0"
   },
   {
     "slug": "nate-su",
