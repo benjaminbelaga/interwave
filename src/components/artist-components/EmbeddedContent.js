@@ -33,7 +33,25 @@ const EmbeddedContent = ({ links = [] }) => {
 			{links.map((url, index) => (
 				<div key={index} className="embed-block">
 					<div className="player-wrapper">
-						<ReactPlayer url={url} controls width="100%" height="100%" className="react-player" />
+						<ReactPlayer 
+							url={url} 
+							controls 
+							width="100%" 
+							height="100%" 
+							className="react-player"
+							config={{
+								youtube: {
+									playerVars: {
+										quality: 'hd1080',
+										hd: 1,
+										autoplay: 0,
+										modestbranding: 1,
+										rel: 0,
+										showinfo: 0
+									}
+								}
+							}}
+						/>
 					</div>
 				</div>
 			))}
