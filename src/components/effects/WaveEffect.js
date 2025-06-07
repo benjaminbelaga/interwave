@@ -1,266 +1,266 @@
 import { useEffect, useRef } from 'react';
 
 const WaveEffect = () => {
-	const canvasRef = useRef(null);
-	const mouseRef = useRef({ x: 0, y: 0 });
-	const animationRef = useRef();
-	const waveConfigRef = useRef(null);
+    const canvasRef = useRef(null);
+    const mouseRef = useRef({ x: 0, y: 0 });
+    const animationRef = useRef();
+    const waveConfigRef = useRef(null);
 
-	useEffect(() => {
-		const canvas = canvasRef.current;
-		if (!canvas) return;
+    useEffect(() => {
+        const canvas = canvasRef.current;
+        if (!canvas) return;
 
-		const ctx = canvas.getContext('2d');
-		let time = 0;
+        const ctx = canvas.getContext('2d');
+        let time = 0;
 
-		// Générateur de seed pour cohérence pendant la session
-		const sessionSeed = Math.random() * 1000;
-		const seededRandom = (seed) => {
-			const x = Math.sin(seed) * 10000;
-			return x - Math.floor(x);
-		};
+        // Générateur de seed pour cohérence pendant la session
+        const sessionSeed = Math.random() * 1000;
+        const seededRandom = (seed) => {
+            const x = Math.sin(seed) * 10000;
+            return x - Math.floor(x);
+        };
 
-		// Configuration aléatoire TRÈS variée pour unicité
-		const generateWaveConfig = () => {
-			const layerCount = Math.floor(seededRandom(sessionSeed) * 3) + 3; // 3-5 couches
-			const layers = [];
+        // Configuration aléatoire TRÈS variée pour unicité
+        const generateWaveConfig = () => {
+            const layerCount = Math.floor(seededRandom(sessionSeed) * 3) + 3; // 3-5 couches
+            const layers = [];
 
-			// Paramètres globaux uniques pour cette session
-			const globalDirection = seededRandom(sessionSeed + 1000) > 0.5 ? 1 : -1; // Direction générale
-			const globalTempo = 0.16 + seededRandom(sessionSeed + 2000) * 0.07; // Tempo général (0.16 à 0.23)
-			const globalStyle = Math.floor(seededRandom(sessionSeed + 3000) * 4); // Style 0-3
+            // Paramètres globaux uniques pour cette session
+            const globalDirection = seededRandom(sessionSeed + 1000) > 0.5 ? 1 : -1; // Direction générale
+            const globalTempo = 0.16 + seededRandom(sessionSeed + 2000) * 0.07; // Tempo général (0.16 à 0.23)
+            const globalStyle = Math.floor(seededRandom(sessionSeed + 3000) * 4); // Style 0-3
 
-			console.log(`🌊 Style unique: ${globalStyle}, Tempo: ${globalTempo.toFixed(2)}, Direction: ${globalDirection > 0 ? 'droite' : 'gauche'}`);
+            console.log(`🌊 Style unique: ${globalStyle}, Tempo: ${globalTempo.toFixed(2)}, Direction: ${globalDirection > 0 ? 'droite' : 'gauche'}`);
 
-			for (let i = 0; i < layerCount; i++) {
-				// Chaque couche a ses propres caractéristiques uniques
-				const layerDirection = seededRandom(sessionSeed + i * 17) > 0.3 ? globalDirection : -globalDirection;
-				const hasBreaks = seededRandom(sessionSeed + i * 19) > 0.7; // 30% chance d'avoir des pauses
-				const isPulsing = seededRandom(sessionSeed + i * 21) > 0.8; // 20% chance de pulser
-				const isReverse = seededRandom(sessionSeed + i * 23) > 0.85; // 15% chance d'aller à l'envers
+            for (let i = 0; i < layerCount; i++) {
+                // Chaque couche a ses propres caractéristiques uniques
+                const layerDirection = seededRandom(sessionSeed + i * 17) > 0.3 ? globalDirection : -globalDirection;
+                const hasBreaks = seededRandom(sessionSeed + i * 19) > 0.7; // 30% chance d'avoir des pauses
+                const isPulsing = seededRandom(sessionSeed + i * 21) > 0.8; // 20% chance de pulser
+                const isReverse = seededRandom(sessionSeed + i * 23) > 0.85; // 15% chance d'aller à l'envers
 
-				const layer = {
-					// Amplitude très variée
-					baseAmplitude: seededRandom(sessionSeed + i * 29) * 45 + 15,
-					
-					// Fréquence unique par style
-					frequency: globalStyle === 0 ? 
-						seededRandom(sessionSeed + i * 31) * 0.004 + 0.006 : // Style lent et large
-						globalStyle === 1 ?
-						seededRandom(sessionSeed + i * 33) * 0.008 + 0.008 : // Style moyen
-						globalStyle === 2 ?
-						seededRandom(sessionSeed + i * 35) * 0.012 + 0.004 : // Style rapide et serré
-						seededRandom(sessionSeed + i * 37) * 0.006 + 0.007,   // Style mixte
+                const layer = {
+                    // Amplitude très variée
+                    baseAmplitude: seededRandom(sessionSeed + i * 29) * 45 + 15,
+                    
+                    // Fréquence unique par style
+                    frequency: globalStyle === 0 ? 
+                        seededRandom(sessionSeed + i * 31) * 0.004 + 0.006 : // Style lent et large
+                        globalStyle === 1 ?
+                        seededRandom(sessionSeed + i * 33) * 0.008 + 0.008 : // Style moyen
+                        globalStyle === 2 ?
+                        seededRandom(sessionSeed + i * 35) * 0.012 + 0.004 : // Style rapide et serré
+                        seededRandom(sessionSeed + i * 37) * 0.006 + 0.007,   // Style mixte
 
-					// Vitesse douce, max réduite de 50%
-					speed: (seededRandom(sessionSeed + i * 39) * 0.006 + 0.004) * globalTempo * layerDirection,
-					
-					// Phase initiale unique
-					phase: seededRandom(sessionSeed + i * 41) * Math.PI * 4,
-					
-					// Position Y variée
-					baseY: 0.25 + (i * 0.18) + seededRandom(sessionSeed + i * 43) * 0.15,
-					
-					// Type d'onde avec plus de variété
-					waveType: Math.floor(seededRandom(sessionSeed + i * 45) * 4), // 0-3 maintenant
-					
-					// Couleur dans une palette unique (sans rose)
-					hue: globalStyle === 0 ? 
-						180 + seededRandom(sessionSeed + i * 47) * 35 : // Cyan-bleu (180-215)
-						globalStyle === 1 ?
-						200 + seededRandom(sessionSeed + i * 49) * 25 : // Bleu pur (200-225)
-						globalStyle === 2 ?
-						160 + seededRandom(sessionSeed + i * 51) * 40 : // Cyan-vert-bleu (160-200)
-						170 + seededRandom(sessionSeed + i * 53) * 40,   // Cyan-bleu mixte (170-210)
-					
-					// Opacité variable
-					opacity: (0.5 - i * 0.08) * (0.6 + seededRandom(sessionSeed + i * 55) * 0.5),
-					
-					// Propriétés uniques
-					direction: layerDirection,
-					hasBreaks: hasBreaks,
-					breakFrequency: hasBreaks ? seededRandom(sessionSeed + i * 57) * 0.02 + 0.01 : 0,
-					isPulsing: isPulsing,
-					pulseSpeed: isPulsing ? seededRandom(sessionSeed + i * 59) * 0.03 + 0.02 : 0,
-					isReverse: isReverse,
-					
-					// Complexité unique
-					complexity: seededRandom(sessionSeed + i * 61),
-					distortion: seededRandom(sessionSeed + i * 63) * 0.5
-				};
-				layers.push(layer);
-			}
+                    // Vitesse douce, max réduite de 50%
+                    speed: (seededRandom(sessionSeed + i * 39) * 0.006 + 0.004) * globalTempo * layerDirection,
+                    
+                    // Phase initiale unique
+                    phase: seededRandom(sessionSeed + i * 41) * Math.PI * 4,
+                    
+                    // Position Y variée
+                    baseY: 0.25 + (i * 0.18) + seededRandom(sessionSeed + i * 43) * 0.15,
+                    
+                    // Type d'onde avec plus de variété
+                    waveType: Math.floor(seededRandom(sessionSeed + i * 45) * 4), // 0-3 maintenant
+                    
+                    // Couleur dans une palette unique (sans rose)
+                    hue: globalStyle === 0 ? 
+                        180 + seededRandom(sessionSeed + i * 47) * 35 : // Cyan-bleu (180-215)
+                        globalStyle === 1 ?
+                        200 + seededRandom(sessionSeed + i * 49) * 25 : // Bleu pur (200-225)
+                        globalStyle === 2 ?
+                        160 + seededRandom(sessionSeed + i * 51) * 40 : // Cyan-vert-bleu (160-200)
+                        170 + seededRandom(sessionSeed + i * 53) * 40,   // Cyan-bleu mixte (170-210)
+                    
+                    // Opacité variable
+                    opacity: (0.5 - i * 0.08) * (0.6 + seededRandom(sessionSeed + i * 55) * 0.5),
+                    
+                    // Propriétés uniques
+                    direction: layerDirection,
+                    hasBreaks: hasBreaks,
+                    breakFrequency: hasBreaks ? seededRandom(sessionSeed + i * 57) * 0.02 + 0.01 : 0,
+                    isPulsing: isPulsing,
+                    pulseSpeed: isPulsing ? seededRandom(sessionSeed + i * 59) * 0.03 + 0.02 : 0,
+                    isReverse: isReverse,
+                    
+                    // Complexité unique
+                    complexity: seededRandom(sessionSeed + i * 61),
+                    distortion: seededRandom(sessionSeed + i * 63) * 0.5
+                };
+                layers.push(layer);
+            }
 
-			return { 
-				layers, 
-				globalStyle, 
-				globalTempo, 
-				globalDirection,
-				sessionSeed // Pour debug
-			};
-		};
+            return { 
+                layers, 
+                globalStyle, 
+                globalTempo, 
+                globalDirection,
+                sessionSeed // Pour debug
+            };
+        };
 
-		// Initialize configuration
-		if (!waveConfigRef.current) {
-			waveConfigRef.current = generateWaveConfig();
-			console.log('🌊 Configuration unique générée:', waveConfigRef.current);
-		}
+        // Initialize configuration
+        if (!waveConfigRef.current) {
+            waveConfigRef.current = generateWaveConfig();
+            console.log('🌊 Configuration unique générée:', waveConfigRef.current);
+        }
 
-		// Resize canvas to full screen
-		const resizeCanvas = () => {
-			canvas.width = window.innerWidth;
-			canvas.height = window.innerHeight;
-		};
+        // Resize canvas to full screen
+        const resizeCanvas = () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        };
 
-		// Mouse tracking
-		const handleMouseMove = (e) => {
-			mouseRef.current = {
-				x: e.clientX,
-				y: e.clientY
-			};
-		};
+        // Mouse tracking
+        const handleMouseMove = (e) => {
+            mouseRef.current = {
+                x: e.clientX,
+                y: e.clientY
+            };
+        };
 
-		// Calcul de vague complexe et unique
-		const calculateWaveY = (x, layerConfig, time, mouseInfluenceH = 1, mouseInfluenceV = 1) => {
-			let y = 0;
-			
-			// Effet de pause aléatoire
-			let timeMultiplier = 1;
-			if (layerConfig.hasBreaks) {
-				timeMultiplier = Math.abs(Math.sin(time * layerConfig.breakFrequency)) > 0.3 ? 1 : 0.2;
-			}
-			
-			// Effet de pulse
-			if (layerConfig.isPulsing) {
-				timeMultiplier *= 0.7 + 0.3 * Math.sin(time * layerConfig.pulseSpeed);
-			}
-			
-			const effectiveTime = time * timeMultiplier;
-			const effectiveX = layerConfig.isReverse ? -x : x;
+        // Calcul de vague complexe et unique
+        const calculateWaveY = (x, layerConfig, time, mouseInfluenceH = 1, mouseInfluenceV = 1) => {
+            let y = 0;
+            
+            // Effet de pause aléatoire
+            let timeMultiplier = 1;
+            if (layerConfig.hasBreaks) {
+                timeMultiplier = Math.abs(Math.sin(time * layerConfig.breakFrequency)) > 0.3 ? 1 : 0.2;
+            }
+            
+            // Effet de pulse
+            if (layerConfig.isPulsing) {
+                timeMultiplier *= 0.7 + 0.3 * Math.sin(time * layerConfig.pulseSpeed);
+            }
+            
+            const effectiveTime = time * timeMultiplier;
+            const effectiveX = layerConfig.isReverse ? -x : x;
 
-			// Types d'ondes étendus
-			if (layerConfig.waveType === 0) {
-				// Sinusoïdale pure
-				y = Math.sin(effectiveX * layerConfig.frequency + effectiveTime * layerConfig.speed + layerConfig.phase);
-			} else if (layerConfig.waveType === 1) {
-				// Cosinusoïdale pure
-				y = Math.cos(effectiveX * layerConfig.frequency + effectiveTime * layerConfig.speed + layerConfig.phase);
-			} else if (layerConfig.waveType === 2) {
-				// Onde complexe mixte
-				y = (Math.sin(effectiveX * layerConfig.frequency + effectiveTime * layerConfig.speed + layerConfig.phase) + 
-					 Math.cos(effectiveX * layerConfig.frequency * 1.3 + effectiveTime * layerConfig.speed * 0.8 + layerConfig.phase)) * 0.5;
-			} else {
-				// Onde distordue (nouveau)
-				const base = Math.sin(effectiveX * layerConfig.frequency + effectiveTime * layerConfig.speed + layerConfig.phase);
-				y = base + Math.sin(base * 3 + effectiveTime * 0.1) * layerConfig.distortion;
-			}
+            // Types d'ondes étendus
+            if (layerConfig.waveType === 0) {
+                // Sinusoïdale pure
+                y = Math.sin(effectiveX * layerConfig.frequency + effectiveTime * layerConfig.speed + layerConfig.phase);
+            } else if (layerConfig.waveType === 1) {
+                // Cosinusoïdale pure
+                y = Math.cos(effectiveX * layerConfig.frequency + effectiveTime * layerConfig.speed + layerConfig.phase);
+            } else if (layerConfig.waveType === 2) {
+                // Onde complexe mixte
+                y = (Math.sin(effectiveX * layerConfig.frequency + effectiveTime * layerConfig.speed + layerConfig.phase) + 
+                     Math.cos(effectiveX * layerConfig.frequency * 1.3 + effectiveTime * layerConfig.speed * 0.8 + layerConfig.phase)) * 0.5;
+            } else {
+                // Onde distordue (nouveau)
+                const base = Math.sin(effectiveX * layerConfig.frequency + effectiveTime * layerConfig.speed + layerConfig.phase);
+                y = base + Math.sin(base * 3 + effectiveTime * 0.1) * layerConfig.distortion;
+            }
 
-			// Ajouter de la complexité basée sur le paramètre
-			if (layerConfig.complexity > 0.5) {
-				y += Math.sin(effectiveX * layerConfig.frequency * 2.1 + effectiveTime * layerConfig.speed * 1.3) * 0.3 * layerConfig.complexity;
-			}
+            // Ajouter de la complexité basée sur le paramètre
+            if (layerConfig.complexity > 0.5) {
+                y += Math.sin(effectiveX * layerConfig.frequency * 2.1 + effectiveTime * layerConfig.speed * 1.3) * 0.3 * layerConfig.complexity;
+            }
 
-			return y * layerConfig.baseAmplitude * mouseInfluenceH * mouseInfluenceV;
-		};
+            return y * layerConfig.baseAmplitude * mouseInfluenceH * mouseInfluenceV;
+        };
 
-		// Main animation loop
-		const animate = () => {
-			if (!ctx || !waveConfigRef.current) return;
+        // Main animation loop
+        const animate = () => {
+            if (!ctx || !waveConfigRef.current) return;
 
-			// Clear canvas proprement
-			ctx.clearRect(0, 0, canvas.width, canvas.height);
+            // Clear canvas proprement
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-			// Mouse influence calculation
-			const mouseX = mouseRef.current.x / canvas.width;
-			const mouseY = mouseRef.current.y / canvas.height;
-			const centerX = canvas.width / 2;
-			const mouseDistance = Math.abs(mouseRef.current.x - centerX) / centerX;
+            // Mouse influence calculation
+            const mouseX = mouseRef.current.x / canvas.width;
+            const mouseY = mouseRef.current.y / canvas.height;
+            const centerX = canvas.width / 2;
+            const mouseDistance = Math.abs(mouseRef.current.x - centerX) / centerX;
 
-			// Draw wave layers avec leurs propriétés uniques
-			waveConfigRef.current.layers.forEach((layer, index) => {
-				ctx.save();
-				
-				// Couleur qui change avec la position verticale de la souris
-				const saturation = 60 + mouseDistance * 40 + layer.complexity * 20;
-				const lightness = 40 + mouseY * 25 + (layer.isPulsing ? Math.sin(time * layer.pulseSpeed) * 10 : 0);
-				let alpha = layer.opacity * (0.7 + mouseY * 0.5);
-				
-				// Effet de clignotement pour les couches avec pauses
-				if (layer.hasBreaks && Math.sin(time * layer.breakFrequency) < -0.5) {
-					alpha *= 0.3;
-				}
-				
-				ctx.strokeStyle = `hsla(${layer.hue}, ${saturation}%, ${lightness}%, ${alpha})`;
-				ctx.lineWidth = 2.8 - index * 0.4;
-				ctx.lineCap = 'round';
+            // Draw wave layers avec leurs propriétés uniques
+            waveConfigRef.current.layers.forEach((layer, index) => {
+                ctx.save();
+                
+                // Couleur qui change avec la position verticale de la souris
+                const saturation = 60 + mouseDistance * 40 + layer.complexity * 20;
+                const lightness = 40 + mouseY * 25 + (layer.isPulsing ? Math.sin(time * layer.pulseSpeed) * 10 : 0);
+                let alpha = layer.opacity * (0.7 + mouseY * 0.5);
+                
+                // Effet de clignotement pour les couches avec pauses
+                if (layer.hasBreaks && Math.sin(time * layer.breakFrequency) < -0.5) {
+                    alpha *= 0.3;
+                }
+                
+                ctx.strokeStyle = `hsla(${layer.hue}, ${saturation}%, ${lightness}%, ${alpha})`;
+                ctx.lineWidth = 2.8 - index * 0.4;
+                ctx.lineCap = 'round';
 
-				// Mouse influence horizontal (amplitude)
-				const horizontalInfluence = 1 + mouseDistance * 0.7 * (1 - index * 0.1);
-				
-				// Mouse influence vertical (fréquence et décalage Y)
-				const verticalInfluence = 1 + (1 - mouseY) * 0.9;
-				const verticalOffset = (mouseY - 0.5) * 80 * layer.direction;
+                // Mouse influence horizontal (amplitude)
+                const horizontalInfluence = 1 + mouseDistance * 0.7 * (1 - index * 0.1);
+                
+                // Mouse influence vertical (fréquence et décalage Y)
+                const verticalInfluence = 1 + (1 - mouseY) * 0.9;
+                const verticalOffset = (mouseY - 0.5) * 80 * layer.direction;
 
-				// Boost de fréquence horizontal
-				const frequencyBoost = 1 + mouseX * 0.5 * (1 - index * 0.15);
+                // Boost de fréquence horizontal
+                const frequencyBoost = 1 + mouseX * 0.5 * (1 - index * 0.15);
 
-				// Create wave path
-				ctx.beginPath();
-				for (let x = 0; x <= canvas.width; x += 2.5) { // Pas plus large pour fluidité
-					const baseY = canvas.height * layer.baseY + verticalOffset;
-					const waveY = calculateWaveY(x, {
-						...layer,
-						frequency: layer.frequency * frequencyBoost
-					}, time, horizontalInfluence, verticalInfluence);
-					
-					const finalY = baseY + waveY;
+                // Create wave path
+                ctx.beginPath();
+                for (let x = 0; x <= canvas.width; x += 2.5) { // Pas plus large pour fluidité
+                    const baseY = canvas.height * layer.baseY + verticalOffset;
+                    const waveY = calculateWaveY(x, {
+                        ...layer,
+                        frequency: layer.frequency * frequencyBoost
+                    }, time, horizontalInfluence, verticalInfluence);
+                    
+                    const finalY = baseY + waveY;
 
-					if (x === 0) {
-						ctx.moveTo(x, finalY);
-					} else {
-						ctx.lineTo(x, finalY);
-					}
-				}
-				ctx.stroke();
-				ctx.restore();
-			});
+                    if (x === 0) {
+                        ctx.moveTo(x, finalY);
+                    } else {
+                        ctx.lineTo(x, finalY);
+                    }
+                }
+                ctx.stroke();
+                ctx.restore();
+            });
 
-			// Ralentir l'animation globale
-			time += 0.7; // Au lieu de 1, pour ralentir
+            // Ralentir l'animation globale
+            time += 0.7; // Au lieu de 1, pour ralentir
 
-			animationRef.current = requestAnimationFrame(animate);
-		};
+            animationRef.current = requestAnimationFrame(animate);
+        };
 
-		// Initialize
-		resizeCanvas();
-		window.addEventListener('resize', resizeCanvas);
-		window.addEventListener('mousemove', handleMouseMove);
-		animate();
+        // Initialize
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
+        window.addEventListener('mousemove', handleMouseMove);
+        animate();
 
-		// Cleanup
-		return () => {
-			window.removeEventListener('resize', resizeCanvas);
-			window.removeEventListener('mousemove', handleMouseMove);
-			if (animationRef.current) {
-				cancelAnimationFrame(animationRef.current);
-			}
-		};
-	}, []);
+        // Cleanup
+        return () => {
+            window.removeEventListener('resize', resizeCanvas);
+            window.removeEventListener('mousemove', handleMouseMove);
+            if (animationRef.current) {
+                cancelAnimationFrame(animationRef.current);
+            }
+        };
+    }, []);
 
-	return (
-		<canvas
-			ref={canvasRef}
-			style={{
-				position: 'fixed',
-				top: 0,
-				left: 0,
-				width: '100%',
-				height: '100%',
-				pointerEvents: 'none',
-				zIndex: 1
-			}}
-		/>
-	);
+    return (
+        <canvas
+            ref={canvasRef}
+            style={{
+                position: 'fixed',
+                top: 0,
+                left: 0,
+                width: '100%',
+                height: '100%',
+                pointerEvents: 'none',
+                zIndex: 1
+            }}
+        />
+    );
 };
 
 export default WaveEffect; 
