@@ -2,6 +2,21 @@
 const nextConfig = {
 	reactStrictMode: true,
 	pageExtensions: ["js", "jsx"],
+	// Force cache invalidation
+	generateEtags: false,
+	headers: async () => {
+		return [
+			{
+				source: '/:path*',
+				headers: [
+					{
+						key: 'Cache-Control',
+						value: 'no-cache, no-store, must-revalidate',
+					},
+				],
+			},
+		]
+	},
 };
 
 export default nextConfig;
