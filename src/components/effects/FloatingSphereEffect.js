@@ -133,7 +133,7 @@ const FloatingSphereEffect = () => {
 				this.distortionPhase += this.rotationSpeed;
 			}
 
-			draw(ctx, parallaxOffsetX = 0, parallaxOffsetY = 0, time) {
+			draw(ctx, parallaxOffsetX = 0, parallaxOffsetY = 0) {
 				ctx.save();
 				
 				// Calcul de la position avec parallax
@@ -286,7 +286,7 @@ const FloatingSphereEffect = () => {
 					canvas.height,
 					time
 				);
-				sphere.draw(ctx, parallaxX, parallaxY, time);
+				sphere.draw(ctx, parallaxX, parallaxY);
 			});
 			
 			animationRef.current = requestAnimationFrame(animate);

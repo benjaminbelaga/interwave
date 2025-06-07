@@ -1,6 +1,4 @@
-import Link from "next/link";
-
-import { SITE_CONTACT_EMAIL, SITE_TITLE } from "../../constants/seo";
+// Footer component with hard-coded content (no imports needed)
 
 /**
  * Dark Mode Footer - Ekipa Inspired Design

@@ -27,7 +27,7 @@ const WaveEffect = () => {
 
 			// Paramètres globaux uniques pour cette session
 			const globalDirection = seededRandom(sessionSeed + 1000) > 0.5 ? 1 : -1; // Direction générale
-			const globalTempo = 0.3 + seededRandom(sessionSeed + 2000) * 0.7; // Tempo général (0.3 à 1.0)
+			const globalTempo = 0.16 + seededRandom(sessionSeed + 2000) * 0.07; // Tempo général (0.16 à 0.23)
 			const globalStyle = Math.floor(seededRandom(sessionSeed + 3000) * 4); // Style 0-3
 
 			console.log(`🌊 Style unique: ${globalStyle}, Tempo: ${globalTempo.toFixed(2)}, Direction: ${globalDirection > 0 ? 'droite' : 'gauche'}`);
@@ -52,8 +52,8 @@ const WaveEffect = () => {
 						seededRandom(sessionSeed + i * 35) * 0.012 + 0.004 : // Style rapide et serré
 						seededRandom(sessionSeed + i * 37) * 0.006 + 0.007,   // Style mixte
 
-					// Vitesse RALENTIE et très variée
-					speed: (seededRandom(sessionSeed + i * 39) * 0.015 + 0.008) * globalTempo * layerDirection,
+					// Vitesse douce, max réduite de 50%
+					speed: (seededRandom(sessionSeed + i * 39) * 0.006 + 0.004) * globalTempo * layerDirection,
 					
 					// Phase initiale unique
 					phase: seededRandom(sessionSeed + i * 41) * Math.PI * 4,

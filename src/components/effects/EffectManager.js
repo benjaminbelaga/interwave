@@ -1,9 +1,10 @@
 import { useState } from 'react';
-import WaveEffect from './WaveEffect';
+
+import FloatingSphereEffect from './FloatingSphereEffect';
 import LiquidEffect from './LiquidEffect';
 import ParticleEffect from './ParticleEffect';
 import RippleEffect from './RippleEffect';
-import FloatingSphereEffect from './FloatingSphereEffect';
+import WaveEffect from './WaveEffect';
 
 // Liste des effets disponibles
 const EFFECTS = {
