@@ -39,21 +39,27 @@ const WaveEffect = () => {
                 const isPulsing = seededRandom(sessionSeed + i * 21) > 0.8; // 20% chance de pulser
                 const isReverse = seededRandom(sessionSeed + i * 23) > 0.85; // 15% chance d'aller à l'envers
 
+                // --- Prévention des formes indésirables ---
+                // Fréquence de base
+                let baseFrequency = 0.005 + seededRandom(sessionSeed + i * 31) * 0.008; // 0.005 à 0.013
+                // S'assurer que les fréquences des couches ne sont pas des multiples simples
+                if (i > 0) {
+                    const prevFreq = layers[i - 1].frequency;
+                    const ratio = baseFrequency / prevFreq;
+                    if (ratio > 1.8 && ratio < 2.2) { // Éviter le ratio ~2x
+                        baseFrequency *= 1.4;
+                    }
+                }
+                
                 const layer = {
-                    // Amplitude très variée
-                    baseAmplitude: seededRandom(sessionSeed + i * 29) * 45 + 15,
+                    // Amplitude contrôlée pour éviter une vague dominante
+                    baseAmplitude: seededRandom(sessionSeed + i * 29) * 25 + 15, // Max réduit
                     
-                    // Fréquence unique par style
-                    frequency: globalStyle === 0 ? 
-                        seededRandom(sessionSeed + i * 31) * 0.004 + 0.006 : // Style lent et large
-                        globalStyle === 1 ?
-                        seededRandom(sessionSeed + i * 33) * 0.008 + 0.008 : // Style moyen
-                        globalStyle === 2 ?
-                        seededRandom(sessionSeed + i * 35) * 0.012 + 0.004 : // Style rapide et serré
-                        seededRandom(sessionSeed + i * 37) * 0.006 + 0.007,   // Style mixte
+                    frequency: baseFrequency,
 
-                    // Vitesse douce, max réduite de 50%
-                    speed: (seededRandom(sessionSeed + i * 39) * 0.006 + 0.004) * globalTempo * layerDirection,
+                    // --- Vitesse bridée ---
+                    // Vitesse max réduite et ralentie par le tempo global
+                    speed: (seededRandom(sessionSeed + i * 39) * 0.003 + 0.0015) * globalTempo * layerDirection,
                     
                     // Phase initiale unique
                     phase: seededRandom(sessionSeed + i * 41) * Math.PI * 4,
@@ -81,12 +87,12 @@ const WaveEffect = () => {
                     hasBreaks: hasBreaks,
                     breakFrequency: hasBreaks ? seededRandom(sessionSeed + i * 57) * 0.02 + 0.01 : 0,
                     isPulsing: isPulsing,
-                    pulseSpeed: isPulsing ? seededRandom(sessionSeed + i * 59) * 0.03 + 0.02 : 0,
+                    pulseSpeed: isPulsing ? seededRandom(sessionSeed + i * 59) * 0.02 + 0.01 : 0, // Pulse plus lent
                     isReverse: isReverse,
                     
-                    // Complexité unique
-                    complexity: seededRandom(sessionSeed + i * 61),
-                    distortion: seededRandom(sessionSeed + i * 63) * 0.5
+                    // Complexité réduite pour éviter les pics
+                    complexity: seededRandom(sessionSeed + i * 61) * 0.7,
+                    distortion: seededRandom(sessionSeed + i * 63) * 0.35
                 };
                 layers.push(layer);
             }
@@ -226,8 +232,8 @@ const WaveEffect = () => {
                 ctx.restore();
             });
 
-            // Ralentir l'animation globale
-            time += 0.7; // Au lieu de 1, pour ralentir
+            // Ralentir l'animation globale pour une sensation plus douce
+            time += 0.5; // Réduit de 0.7 à 0.5
 
             animationRef.current = requestAnimationFrame(animate);
         };
