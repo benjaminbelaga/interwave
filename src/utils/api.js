@@ -27,10 +27,10 @@ const getArtists = () => {
 			return artists;
 		}
 
-		return false;
+		return [];
 	} catch (error) {
 		console.error("Error reading data.json:", error);
-		return false; // Return false if an error occurs.
+		return []; // Return empty array instead of false
 	}
 };
 
@@ -81,7 +81,7 @@ export function getAllPosts(fields = []) {
 	// Fetch the list of artists
 	const artists = getArtists();
 	if (!artists) {
-		return false; // Return false if there are no artists.
+		return []; // Return empty array instead of false
 	}
 
 	// Fetch all posts and extract specified fields, then sort them alphabetically by title
