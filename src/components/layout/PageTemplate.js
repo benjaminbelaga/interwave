@@ -5,7 +5,7 @@ import Header from "./Header";
 import EffectManager from "../effects/EffectManager";
 
 /**
- * Dark Mode PageTemplate - Ekipa Inspired Design
+ * Dark Mode PageTemplate
  *
  * @param {Object} props - Component properties.
  * @param {React.ReactNode} props.children - Content to be rendered within the PageTemplate.

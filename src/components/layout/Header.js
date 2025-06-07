@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 /**
- * Dark Mode Header - Ekipa Inspired Design
+ * Dark Mode Header
  *
  * @returns {JSX.Element} The rendered header component.
  */

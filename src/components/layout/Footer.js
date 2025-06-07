@@ -1,7 +1,7 @@
 // Footer component with hard-coded content (no imports needed)
 
 /**
- * Dark Mode Footer - Ekipa Inspired Design
+ * Dark Mode Footer
  *
  * @returns {JSX.Element} The rendered footer component.
  */

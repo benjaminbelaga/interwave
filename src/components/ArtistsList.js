@@ -2,7 +2,7 @@ import Link from "next/link";
 import PropTypes from "prop-types";
 
 /**
- * Dark Mode Artists Grid - Ekipa Inspired Design
+ * Dark Mode Artists Grid
  *
  * @param {Object} props - Component properties.
  * @param {Array<Object>} props.posts - Array of artist posts.
