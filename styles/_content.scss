@@ -22,7 +22,7 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	padding-block: 3rem 2rem;
+	padding-block: 1.5rem 1rem;
 	width: 100%;
 	position: relative;
 	z-index: 10;
@@ -31,7 +31,7 @@
 /* Homepage intro section */
 .homepage-intro {
 	text-align: center;
-	margin-bottom: 4rem;
+	margin-bottom: 2rem;
 	
 	.intro-title {
 		font-family: $font-family-display;
@@ -56,25 +56,37 @@
 	}
 }
 
-/* Artists Grid - Fixed alignment */
+/* Artists Grid - Optimized for all artists visible */
 .artist-grid {
 	list-style: none;
 	display: grid;
-	gap: 3rem 4rem;
+	gap: 1.5rem 2.5rem;
 	margin: 0;
-	padding: 3rem 2rem;
+	padding: 1.5rem 1rem;
 	width: 100%;
-	max-width: 1400px;
+	max-width: 1600px;
 	margin: 0 auto;
 	
-	/* Desktop: 4 columns with proper alignment */
-	grid-template-columns: repeat(4, 1fr);
+	/* Desktop: 6 columns for compact view */
+	grid-template-columns: repeat(6, 1fr);
 	align-items: start;
 	
-	/* Large tablets: 3 columns */
+	/* Extra large screens: maintain 6 columns with more space */
+	@media (min-width: 1400px) {
+		gap: 2rem 3rem;
+		padding: 2rem 1.5rem;
+	}
+	
+	/* Large desktop: 5 columns */
+	@media (max-width: 1200px) {
+		grid-template-columns: repeat(5, 1fr);
+		gap: 1.8rem 2.2rem;
+	}
+	
+	/* Large tablets: 4 columns */
 	@media (max-width: 1024px) {
-		grid-template-columns: repeat(3, 1fr);
-		gap: 2.5rem 3rem;
+		grid-template-columns: repeat(4, 1fr);
+		gap: 2rem 2.5rem;
 		max-width: 1000px;
 	}
 	
@@ -109,9 +121,9 @@
 	font-family: "Satoshi", "Inter", "Helvetica Neue", Arial, sans-serif;
 	font-weight: 400;
 	
-	/* Significantly larger font sizes */
-	font-size: clamp(1.5rem, 3.5vw, 2.8rem);
-	line-height: 1.2;
+	/* Optimized font sizes for compact view */
+	font-size: clamp(1.2rem, 2.8vw, 2.2rem);
+	line-height: 1.1;
 	letter-spacing: 0.01em;
 	
 	/* Prevent line breaks - keep names on single line */
@@ -121,12 +133,12 @@
 	
 	/* Tablet sizes */
 	@media (max-width: 1024px) {
-		font-size: clamp(1.4rem, 4vw, 2.4rem);
+		font-size: clamp(1.1rem, 3.5vw, 1.8rem);
 	}
 	
 	/* Mobile sizes */
 	@media (max-width: 768px) {
-		font-size: clamp(1.3rem, 4.5vw, 2rem);
+		font-size: clamp(1.2rem, 4vw, 1.6rem);
 		letter-spacing: 0.005em; /* Slightly reduced on mobile */
 	}
 	

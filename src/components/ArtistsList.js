@@ -16,7 +16,7 @@ const ArtistsList = ({ posts = [] }) => {
 	const artistsList = posts.map(({ slug, title }) => (
 		<li key={slug} className="artist-item">
 			<Link href={`/artist/${slug}`} className="artist-link">
-				{title}
+				{title.toLowerCase()}
 			</Link>
 		</li>
 	));
