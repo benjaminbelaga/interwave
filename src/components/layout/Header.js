@@ -9,7 +9,9 @@ const Header = () => {
 	return (
 		<header className="site-header">
 			<div className="header-brand">
-				<span className="site-title">interwave</span>
+				<Link href="/" className="site-title-link">
+					<span className="site-title">interwave</span>
+				</Link>
 			</div>
 			<nav className="header-nav">
 				<Link href="/" className="nav-link">artists</Link>

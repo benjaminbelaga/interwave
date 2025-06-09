@@ -1,0 +1,31 @@
+/* Font Definitions */
+
+/* Söhne (for Headings and UI) */
+@font-face {
+  font-family: 'Sohne';
+  src: url('/fonts/TestSohne-Buch-BF663d89cd32e6a.otf') format('opentype');
+  font-weight: 700; // Bold (Buch)
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Sohne';
+  src: url('/fonts/TestSohne-Leicht-BF663d89cd4952e.otf') format('opentype');
+  font-weight: 500; // Medium (Leicht)
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Sohne';
+  src: url('/fonts/TestSohne-Extraleicht-BF663d89cd3f5c5.otf') format('opentype');
+  font-weight: 300; // Light (Extraleicht)
+  font-style: normal;
+}
+
+/* Circular Std (for Body & UI) */
+@font-face {
+  font-family: 'Circular Std';
+  src: url('/fonts/circular-std-medium-500.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+} 

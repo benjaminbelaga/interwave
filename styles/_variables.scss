@@ -75,34 +75,38 @@ $spacer: 1rem !default;
    ==================== */
 $variable-prefix: iw- !default;
 
-/* Font - Source Code Pro Typography
+/* Font - Typographic Hierarchy
    ==================== */
 
-// Source Code Pro font stack
+// Body/UI font
 $font-family-sans-serif: 
-	"Source Code Pro", 
-	"SF Mono", 
-	Monaco, 
-	"Cascadia Code", 
-	"Roboto Mono", 
-	Consolas, 
-	"Courier New", 
-	monospace !default;
+	"Sohne",
+	system-ui,
+	-apple-system,
+	"Segoe UI",
+	Roboto,
+	"Helvetica Neue",
+	"Noto Sans",
+	"Liberation Sans",
+	Arial,
+	sans-serif,
+	"Apple Color Emoji",
+	"Segoe UI Emoji",
+	"Segoe UI Symbol",
+	"Noto Color Emoji" !default;
 
+// Heading font
 $font-family-display: 
-	"Source Code Pro", 
-	"SF Mono", 
-	Monaco, 
+	"Sohne", 
 	system-ui, 
-	monospace !default;
+	sans-serif !default;
 
+// Monospace fallback for <code> tags
 $font-family-monospace: 
-	"Source Code Pro", 
 	"SF Mono", 
 	Monaco, 
-	"Cascadia Code", 
-	"Roboto Mono", 
 	Consolas, 
+	"Liberation Mono", 
 	"Courier New", 
 	monospace !default;
 
@@ -114,12 +118,10 @@ $font-size-base: 1rem !default;
 $font-size-sm: $font-size-base * 0.875 !default;
 $font-size-lg: $font-size-base * 1.125 !default;
 
-// Source Code Pro weights
-$font-weight-lighter: 200 !default;
+// Font weights Sohne
 $font-weight-light: 300 !default;
 $font-weight-normal: 400 !default;
 $font-weight-medium: 500 !default;
-$font-weight-semi-bold: 600 !default;
 $font-weight-bold: 700 !default;
 $font-weight-bolder: 800 !default;
 $font-weight-base: $font-weight-normal !default;

@@ -49,10 +49,13 @@
  */
 
 .header-brand {
+	.site-title-link {
+		text-decoration: none;
+	}
 	.site-title {
 		font-family: $font-family-display;
 		font-size: clamp(0.8rem, 1.8vw, 1.6rem);
-		font-weight: 500;
+		font-weight: $font-weight-bold;
 		color: $color-text-primary;
 		letter-spacing: 0.5px;
 		text-transform: lowercase;
@@ -72,8 +75,9 @@
 .nav-link {
 	color: $color-text-primary;
 	text-decoration: none;
+	font-family: $font-family-display;
 	font-size: clamp(0.8rem, 1.8vw, 1.6rem);
-	font-weight: 500;
+	font-weight: $font-weight-medium;
 	text-transform: none;
 	letter-spacing: 0.5px;
 	transition: color 0.2s ease;

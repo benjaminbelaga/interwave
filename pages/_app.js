@@ -1,6 +1,7 @@
 /* eslint-disable react/no-unknown-property */
 import PropTypes from "prop-types"; // Import PropTypes for prop type checking.
 
+import "../styles/_fonts.scss"; // Import custom font definitions
 import "../styles/style.scss"; // Import global styles
 
 /**

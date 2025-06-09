@@ -57,30 +57,28 @@ const ArtistDetails = ({ post }) => {
 				</Link>
 			</div>
 
-			<div className="entry-content">
-				{/* Artist biography */}
-				{bio && <div className="artist-bio">{nl2br(bio)}</div>}
-
-				{/* Artist meta information */}
-				{!(territory === "" && act === "" && tech_rider === "" && press_kit === "") && (
-					<ArtistMeta territory={territory} act={act} tech_rider={tech_rider} press_kit={press_kit} />
-				)}
-
-				<div className="flex-row">
-					{/* Social media links */}
-					{social.length > 0 && (
-						<div className="flex-col">
-							<SocialLinks social={social} />
-						</div>
+			{/* Meta and Links Section - MOVED TO TOP */}
+			<div className="artist-meta-and-links">
+				<div className="artist-meta-section">
+					{!(territory === "" && act === "" && tech_rider === "" && press_kit === "") && (
+						<ArtistMeta territory={territory} act={act} tech_rider={tech_rider} press_kit={press_kit} />
 					)}
+				</div>
+
+				<div className="artist-links-section">
+					{/* Social media links */}
+					{social.length > 0 && <SocialLinks social={social} />}
 
 					{/* Contact information */}
 					{!(contact_email === "" && resident_advisor === "") && (
-						<div className="flex-col">
-							<ContactInfo contact_email={contact_email} resident_advisor={resident_advisor} />
-						</div>
+						<ContactInfo contact_email={contact_email} resident_advisor={resident_advisor} />
 					)}
 				</div>
+			</div>
+
+			<div className="entry-content">
+				{/* Artist biography */}
+				{bio && <div className="artist-bio">{nl2br(bio)}</div>}
 
 				{/* Embedded content */}
 				{videoLinks.length > 0 && <EmbeddedContent links={videoLinks} />}
@@ -97,8 +95,8 @@ ArtistDetails.propTypes = {
 		bio: PropTypes.string,
 		act: PropTypes.string,
 		territory: PropTypes.string,
-		tech_rider: PropTypes.string,
-		press_kit: PropTypes.string,
+		tech_rider: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
+		press_kit: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
 		contact_email: PropTypes.string,
 		resident_advisor: PropTypes.string,
 		social: PropTypes.arrayOf(
