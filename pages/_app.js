@@ -3,6 +3,7 @@ import PropTypes from "prop-types"; // Import PropTypes for prop type checking.
 
 import "../styles/_fonts.scss"; // Import custom font definitions
 import "../styles/style.scss"; // Import global styles
+import "../styles/_content.scss";
 
 /**
  * Custom App component that wraps all pages in the Next.js application.
