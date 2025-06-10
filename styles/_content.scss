@@ -95,11 +95,15 @@
 	@media (max-width: 768px) {
 		row-gap: 1.5rem;
 		max-width: 600px;
+		/* Rester en mode justifié pour les tablettes */
 	}
 
-	/* Mobile */
+	/* Mobile - Une seule colonne */
 	@media (max-width: 480px) {
-		row-gap: 1.2rem;
+		flex-direction: column;
+		justify-content: flex-start;
+		align-items: flex-start;
+		row-gap: 1.5rem;
 		max-width: 400px;
 		padding: 2rem 1rem;
 	}
@@ -134,9 +138,11 @@
 		margin-right: 2.4rem;
 	}
 
-	/* Mobile */
+	/* Mobile - Une seule colonne, prendre toute la largeur */
 	@media (max-width: 480px) {
-		margin-right: 1.8rem;
+		margin-right: 0;
+		width: 100%;
+		flex: 1 1 100%;
 	}
 	
 	/* Remove margin from last item in each row for justified effect */
