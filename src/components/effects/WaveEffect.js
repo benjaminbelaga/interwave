@@ -12,11 +12,14 @@ class DriftingLine {
         this.y = y;
         this.phase = Math.random() * Math.PI * 2;
         // Each line has its own horizontal speed and direction
-        this.horizontalSpeed = (Math.random() - 0.5) * 0.012; 
+        this.horizontalSpeed = (Math.random() - 0.5) * 0.018; // Augmenté de 0.012 à 0.018 (+50% de variation)
         
         // Direction variation - some waves can go opposite directions
         this.direction = Math.random() > 0.5 ? 1 : -1;
         this.secondaryDirection = Math.random() > 0.5 ? 1 : -1;
+        
+        // Vitesse individuelle plus variée pour créer des mouvements différenciés
+        this.speedMultiplier = 0.7 + Math.random() * 0.8; // Entre 0.7x et 1.5x la vitesse de base
         
         // Shape - more curves throughout
         const amplitudeVariation = Math.random();
@@ -31,18 +34,18 @@ class DriftingLine {
         // Frequency for more natural wave patterns
         this.frequency = Math.random() * 0.005 + 0.0025; // Slightly increased for more curves
         
-        // Line thickness variation
-        this.lineWidth = Math.random() * 0.8 + 0.3;
+        // Line thickness variation - plus épais et plus visible
+        this.lineWidth = Math.random() * 1.2 + 0.8; // Augmenté de (0.8 + 0.3) à (1.2 + 0.8) = 0.8-2.0px
         
         // Color - picked from a predefined palette with increased opacity for visibility
         const oceanBlues = [
-            'rgba(70, 130, 180, 0.3)',   // Steel Blue
-            'rgba(100, 149, 237, 0.3)',  // Cornflower Blue
-            'rgba(0, 191, 255, 0.3)',    // Deep Sky Blue
-            'rgba(173, 216, 230, 0.3)',  // Light Blue
-            'rgba(95, 158, 160, 0.3)',   // Cadet Blue
-            'rgba(135, 206, 250, 0.3)',  // Light Sky Blue
-            'rgba(64, 224, 208, 0.3)',   // Turquoise
+            'rgba(70, 130, 180, 0.5)',   // Steel Blue - augmenté de 0.3 à 0.5
+            'rgba(100, 149, 237, 0.5)',  // Cornflower Blue
+            'rgba(0, 191, 255, 0.5)',    // Deep Sky Blue
+            'rgba(173, 216, 230, 0.5)',  // Light Blue
+            'rgba(95, 158, 160, 0.5)',   // Cadet Blue
+            'rgba(135, 206, 250, 0.5)',  // Light Sky Blue
+            'rgba(64, 224, 208, 0.5)',   // Turquoise
         ];
         this.color = oceanBlues[Math.floor(Math.random() * oceanBlues.length)];
         
@@ -73,8 +76,8 @@ class DriftingLine {
         const mouseFrequencyEffect = 1 + (mouse.x - 0.5) * -0.4;
 
         // The phase is updated over time with directional variation
-        const currentPhase = this.phase + time * this.horizontalSpeed * this.direction;
-        const secondaryPhase = this.secondaryPhaseOffset + time * this.horizontalSpeed * this.secondaryDirection * 0.8;
+        const currentPhase = this.phase + time * this.horizontalSpeed * this.direction * this.speedMultiplier;
+        const secondaryPhase = this.secondaryPhaseOffset + time * this.horizontalSpeed * this.secondaryDirection * 0.8 * this.speedMultiplier;
 
         for (let x = -10; x <= this.canvas.width / window.devicePixelRatio + 10; x += 4) {
             
@@ -162,7 +165,7 @@ const WaveEffect = () => {
             // Draw all lines
             linesRef.current.forEach(line => line.draw(time, mouseRef.current));
 
-            time += 0.5; // Keep the good speed
+            time += 0.6; // Augmenté de 0.5 à 0.6 (+20% plus rapide)
             animationRef.current = requestAnimationFrame(animate);
         };
 
