@@ -39,13 +39,13 @@ class DriftingLine {
         
         // Color - picked from a predefined palette with increased opacity for visibility
         const oceanBlues = [
-            'rgba(70, 130, 180, 0.5)',   // Steel Blue - augmenté de 0.3 à 0.5
-            'rgba(100, 149, 237, 0.5)',  // Cornflower Blue
-            'rgba(0, 191, 255, 0.5)',    // Deep Sky Blue
-            'rgba(173, 216, 230, 0.5)',  // Light Blue
-            'rgba(95, 158, 160, 0.5)',   // Cadet Blue
-            'rgba(135, 206, 250, 0.5)',  // Light Sky Blue
-            'rgba(64, 224, 208, 0.5)',   // Turquoise
+            'rgba(70, 130, 180, 0.7)',   // Steel Blue - augmenté pour plus de visibilité
+            'rgba(100, 149, 237, 0.7)',  // Cornflower Blue
+            'rgba(0, 191, 255, 0.7)',    // Deep Sky Blue
+            'rgba(173, 216, 230, 0.6)',  // Light Blue
+            'rgba(95, 158, 160, 0.7)',   // Cadet Blue
+            'rgba(135, 206, 250, 0.6)',  // Light Sky Blue
+            'rgba(64, 224, 208, 0.7)',   // Turquoise
         ];
         this.color = oceanBlues[Math.floor(Math.random() * oceanBlues.length)];
         
@@ -159,8 +159,17 @@ const WaveEffect = () => {
         const animate = () => {
             if (!ctx) return;
 
-            // Clear canvas
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            // Clear canvas avec une méthode plus robuste pour éviter les traces
+            ctx.globalCompositeOperation = 'source-over';
+            ctx.clearRect(0, 0, canvas.width / window.devicePixelRatio, canvas.height / window.devicePixelRatio);
+            
+            // Alternative plus robuste: remplir avec une couleur transparente
+            ctx.fillStyle = 'rgba(0, 0, 0, 0)';
+            ctx.fillRect(0, 0, canvas.width / window.devicePixelRatio, canvas.height / window.devicePixelRatio);
+            
+            // Réinitialiser les propriétés de dessin
+            ctx.globalCompositeOperation = 'source-over';
+            ctx.globalAlpha = 1;
             
             // Draw all lines
             linesRef.current.forEach(line => line.draw(time, mouseRef.current));
