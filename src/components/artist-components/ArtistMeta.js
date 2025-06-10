@@ -30,6 +30,18 @@ const ArtistMeta = ({ territory, act, tech_rider, press_kit }) => {
 
 		// If it's an object with live/dj separation
 		if (typeof tech_rider === 'object') {
+			// Handle the malformed format with "https" key
+			if (tech_rider.https) {
+				const url = tech_rider.https.startsWith('//') ? 'https:' + tech_rider.https : tech_rider.https;
+				return (
+					<a href={url} target="_blank" rel="noopener noreferrer" className="tech-rider">
+						Tech Rider
+						<MdArrowOutward style={{ marginLeft: "5px" }} />
+					</a>
+				);
+			}
+			
+			// Handle the correct format with live/dj keys
 			return (
 				<div className="tech-rider-group">
 					{tech_rider.live && (
@@ -67,6 +79,18 @@ const ArtistMeta = ({ territory, act, tech_rider, press_kit }) => {
 
 		// If it's an object with live/dj separation
 		if (typeof press_kit === 'object') {
+			// Handle the malformed format with "https" key
+			if (press_kit.https) {
+				const url = press_kit.https.startsWith('//') ? 'https:' + press_kit.https : press_kit.https;
+				return (
+					<a href={url} target="_blank" rel="noopener noreferrer" className="press-kit">
+						Press Kit
+						<MdArrowOutward style={{ marginLeft: "5px" }} />
+					</a>
+				);
+			}
+			
+			// Handle the correct format with live/dj keys
 			return (
 				<div className="press-kit-group">
 					{press_kit.live && (
@@ -122,6 +146,7 @@ ArtistMeta.propTypes = {
 		PropTypes.shape({
 			live: PropTypes.string,
 			dj: PropTypes.string,
+			https: PropTypes.string,
 		}),
 	]),
 	press_kit: PropTypes.oneOfType([
@@ -129,6 +154,7 @@ ArtistMeta.propTypes = {
 		PropTypes.shape({
 			live: PropTypes.string,
 			dj: PropTypes.string,
+			https: PropTypes.string,
 		}),
 	]),
 };
