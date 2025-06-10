@@ -22,7 +22,7 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	padding-block: 1.5rem 1rem;
+	padding-block: 2rem 1.5rem;
 	width: 100%;
 	position: relative;
 	z-index: 10;
@@ -56,51 +56,48 @@
 	}
 }
 
-/* Artists Grid - Optimized for all artists visible */
+/* Artists Layout - Justified paragraph effect */
 .artist-grid {
 	list-style: none;
-	display: grid;
-	gap: 1.5rem 2.5rem;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
 	margin: 0;
-	padding: 1.5rem 1rem;
+	padding: 2rem 1.5rem;
 	width: 100%;
-	max-width: 1600px;
+	max-width: 1500px;
 	margin: 0 auto;
+	align-items: flex-start;
 	
-	/* Desktop: 6 columns for compact view */
-	grid-template-columns: repeat(6, 1fr);
-	align-items: start;
+	/* Desktop spacing */
+	row-gap: 2rem;
 	
-	/* Extra large screens: maintain 6 columns with more space */
+	/* Extra large screens */
 	@media (min-width: 1400px) {
-		gap: 2rem 3rem;
-		padding: 2rem 1.5rem;
+		row-gap: 2.5rem;
+		padding: 2.5rem 2rem;
 	}
 	
-	/* Large desktop: 5 columns */
+	/* Large desktop */
 	@media (max-width: 1200px) {
-		grid-template-columns: repeat(5, 1fr);
-		gap: 1.8rem 2.2rem;
+		row-gap: 2rem;
 	}
 	
-	/* Large tablets: 4 columns */
+	/* Large tablets */
 	@media (max-width: 1024px) {
-		grid-template-columns: repeat(4, 1fr);
-		gap: 2rem 2.5rem;
-		max-width: 1000px;
+		row-gap: 1.8rem;
+		max-width: 900px;
 	}
 	
-	/* Tablets: 2 columns for better readability */
+	/* Tablets */
 	@media (max-width: 768px) {
-		grid-template-columns: repeat(2, 1fr);
-		gap: 2rem 2.5rem;
+		row-gap: 1.5rem;
 		max-width: 600px;
 	}
 
-	/* Mobile: 1 column for optimal reading */
+	/* Mobile */
 	@media (max-width: 480px) {
-		grid-template-columns: 1fr;
-		gap: 1.5rem;
+		row-gap: 1.2rem;
 		max-width: 400px;
 		padding: 2rem 1rem;
 	}
@@ -109,9 +106,41 @@
 .artist-item {
 	margin: 0;
 	padding: 0;
-	width: 100%;
 	min-width: 0;
-	/* Remove any positioning transforms that cause misalignment */
+	flex: 0 0 auto;
+	
+	/* Minimum spacing between items when they wrap - 20% more than before */
+	margin-right: 4.2rem;
+	
+	/* Desktop spacing */
+	@media (min-width: 1400px) {
+		margin-right: 4.8rem;
+	}
+	
+	/* Large desktop */
+	@media (max-width: 1200px) {
+		margin-right: 3.6rem;
+	}
+	
+	/* Large tablets */
+	@media (max-width: 1024px) {
+		margin-right: 3rem;
+	}
+	
+	/* Tablets */
+	@media (max-width: 768px) {
+		margin-right: 2.4rem;
+	}
+
+	/* Mobile */
+	@media (max-width: 480px) {
+		margin-right: 1.8rem;
+	}
+	
+	/* Remove margin from last item in each row for justified effect */
+	&:last-child {
+		margin-right: 0;
+	}
 }
 
 .artist-link {
@@ -121,25 +150,25 @@
 	font-family: "Satoshi", "Inter", "Helvetica Neue", Arial, sans-serif;
 	font-weight: 400;
 	
-	/* Optimized font sizes for compact view */
-	font-size: clamp(1.2rem, 2.8vw, 2.2rem);
-	line-height: 1.1;
-	letter-spacing: 0.01em;
+	/* Balanced font sizes for readability */
+	font-size: clamp(1.4rem, 3.2vw, 2.6rem);
+	line-height: 1.15;
+	letter-spacing: 0.005em;
 	
-	/* Prevent line breaks - keep names on single line */
-	white-space: nowrap;
-	overflow: hidden;
-	text-overflow: ellipsis;
+	/* Allow line breaks for better readability */
+	display: block;
+	word-break: break-word;
+	hyphens: auto;
 	
 	/* Tablet sizes */
 	@media (max-width: 1024px) {
-		font-size: clamp(1.1rem, 3.5vw, 1.8rem);
+		font-size: clamp(1.3rem, 4vw, 2.2rem);
 	}
 	
 	/* Mobile sizes */
 	@media (max-width: 768px) {
-		font-size: clamp(1.2rem, 4vw, 1.6rem);
-		letter-spacing: 0.005em; /* Slightly reduced on mobile */
+		font-size: clamp(1.4rem, 4.5vw, 1.9rem);
+		letter-spacing: 0.01em;
 	}
 	
 	/* Small mobile */
