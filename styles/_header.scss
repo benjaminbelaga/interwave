@@ -59,6 +59,12 @@
 		color: $color-text-primary;
 		letter-spacing: 0.5px;
 		text-transform: lowercase;
+		text-shadow: 
+			0 0 6px rgba(0, 0, 0, 1),
+			0 0 12px rgba(0, 0, 0, 1),
+			0 4px 20px rgba(0, 0, 0, 1),
+			0 8px 35px rgba(0, 0, 0, 0.8);
+		-webkit-text-stroke: 0.8px rgba(0, 0, 0, 1);
 	}
 }
 
@@ -81,6 +87,12 @@
 	text-transform: none;
 	letter-spacing: 0.5px;
 	transition: color 0.2s ease;
+	text-shadow: 
+		0 0 6px rgba(0, 0, 0, 1),
+		0 0 12px rgba(0, 0, 0, 1),
+		0 4px 20px rgba(0, 0, 0, 1),
+		0 8px 35px rgba(0, 0, 0, 0.8);
+	-webkit-text-stroke: 0.8px rgba(0, 0, 0, 1);
 
 	&:hover,
 	&:focus-visible {

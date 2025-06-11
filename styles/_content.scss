@@ -42,7 +42,13 @@
 		color: rgba(255, 255, 255, 0.95);
 		margin: 0 0 1rem;
 		letter-spacing: -0.02em;
-		text-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+		text-shadow: 
+			0 0 8px rgba(0, 0, 0, 1),
+			0 0 15px rgba(0, 0, 0, 1),
+			0 4px 20px rgba(0, 0, 0, 1),
+			0 8px 40px rgba(0, 0, 0, 0.8),
+			0 0 60px rgba(0, 0, 0, 0.6);
+		-webkit-text-stroke: 1px rgba(0, 0, 0, 1);
 	}
 	
 	.intro-subtitle {
@@ -51,6 +57,12 @@
 		font-weight: 300;
 		margin: 0;
 		letter-spacing: 0.01em;
+		text-shadow: 
+			0 0 6px rgba(0, 0, 0, 1),
+			0 0 12px rgba(0, 0, 0, 1),
+			0 4px 20px rgba(0, 0, 0, 1),
+			0 8px 30px rgba(0, 0, 0, 0.8);
+		-webkit-text-stroke: 0.8px rgba(0, 0, 0, 1);
 	}
 	
 	@media (max-width: 768px) {
@@ -95,17 +107,14 @@
 	@media (max-width: 768px) {
 		row-gap: 1.5rem;
 		max-width: 600px;
-		/* Rester en mode justifié pour les tablettes */
 	}
 
-	/* Mobile - Une seule colonne */
+	/* Mobile */
 	@media (max-width: 480px) {
-		flex-direction: column;
-		justify-content: flex-start;
-		align-items: flex-start;
-		row-gap: 1.5rem;
+		row-gap: 1.2rem;
 		max-width: 400px;
 		padding: 2rem 1rem;
+		flex-direction: column;
 	}
 }
 
@@ -138,11 +147,10 @@
 		margin-right: 2.4rem;
 	}
 
-	/* Mobile - Une seule colonne, prendre toute la largeur */
+	/* Mobile */
 	@media (max-width: 480px) {
 		margin-right: 0;
 		width: 100%;
-		flex: 1 1 100%;
 	}
 	
 	/* Remove margin from last item in each row for justified effect */
@@ -157,6 +165,13 @@
 	transition: all 0.3s ease;
 	font-family: "Satoshi", "Inter", "Helvetica Neue", Arial, sans-serif;
 	font-weight: 400;
+	text-shadow: 
+		0 0 6px rgba(0, 0, 0, 1),
+		0 0 12px rgba(0, 0, 0, 1),
+		0 4px 20px rgba(0, 0, 0, 1),
+		0 8px 35px rgba(0, 0, 0, 0.9),
+		0 0 50px rgba(0, 0, 0, 0.7);
+	-webkit-text-stroke: 0.8px rgba(0, 0, 0, 1);
 	
 	/* Balanced font sizes for readability */
 	font-size: clamp(1.4rem, 3.2vw, 2.6rem);
@@ -249,6 +264,13 @@
 			line-height: 1.1;
 			margin: 0;
 			word-break: break-word;
+			text-shadow: 
+				0 0 8px rgba(0, 0, 0, 1),
+				0 0 16px rgba(0, 0, 0, 1),
+				0 6px 25px rgba(0, 0, 0, 1),
+				0 12px 45px rgba(0, 0, 0, 0.9),
+				0 0 70px rgba(0, 0, 0, 0.7);
+			-webkit-text-stroke: 1px rgba(0, 0, 0, 1);
 		}
 
 		.go-back {
@@ -256,7 +278,7 @@
 			align-items: center;
 			padding: 0.75rem 1.5rem;
 			color: $color-text-primary;
-			background: transparent;
+			background: rgba(0, 0, 0, 0.4);
 			border: 1px solid $color-border;
 			text-decoration: none;
 			font-size: $font-size-sm;
@@ -265,6 +287,12 @@
 			transition: color 0.2s ease, border-color 0.2s ease;
 			gap: 0.5rem;
 			white-space: nowrap;
+			text-shadow: 
+				0 0 6px rgba(0, 0, 0, 1),
+				0 0 12px rgba(0, 0, 0, 1),
+				0 4px 20px rgba(0, 0, 0, 1);
+			box-shadow: 0 4px 16px rgba(0, 0, 0, 0.6);
+			-webkit-text-stroke: 0.5px rgba(0, 0, 0, 1);
 
 			&::before {
 				content: '←';
@@ -303,12 +331,25 @@
 		font-size: $font-size-lg;
 		font-weight: $font-weight-light;
 		line-height: 1.6;
-		color: $color-text-primary;
-		opacity: 0.9;
-		text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+		color: #ffffff !important;
+		padding: 1.5rem;
+		background: rgba(0, 0, 0, 0.4);
+		border-radius: 8px;
+		backdrop-filter: blur(10px);
+		text-shadow: 
+			0 0 6px rgba(0, 0, 0, 1),
+			0 0 12px rgba(0, 0, 0, 1),
+			0 3px 18px rgba(0, 0, 0, 1),
+			0 6px 30px rgba(0, 0, 0, 0.9);
+		-webkit-text-stroke: 0.5px rgba(0, 0, 0, 1);
 
 		p {
 			margin-bottom: 1rem;
+			color: #ffffff !important;
+		}
+
+		* {
+			color: #ffffff !important;
 		}
 	}
 
@@ -330,7 +371,7 @@
 			display: inline-flex;
 			align-items: center;
 			padding: 0.5rem 1rem;
-			background: transparent;
+			background: rgba(0, 0, 0, 0.3);
 			border: 1px solid $color-border;
 			color: $color-text-primary;
 			text-decoration: none;
@@ -338,6 +379,12 @@
 			font-weight: $font-weight-normal;
 			text-transform: capitalize;
 			transition: color 0.2s ease, border-color 0.2s ease;
+			text-shadow: 
+				0 0 6px rgba(0, 0, 0, 1),
+				0 0 12px rgba(0, 0, 0, 1),
+				0 4px 20px rgba(0, 0, 0, 1);
+			box-shadow: 0 4px 16px rgba(0, 0, 0, 0.6);
+			-webkit-text-stroke: 0.5px rgba(0, 0, 0, 1);
 
 			svg {
 				width: 0.875rem;
@@ -358,12 +405,30 @@
 		font-family: $font-family-display;
 		font-weight: $font-weight-medium;
 		font-size: 1rem;
+		padding: 0.5rem 0;
+		background: rgba(0, 0, 0, 0.25);
+		border-radius: 4px;
+		padding-left: 0.75rem;
+		text-shadow: 
+			0 0 6px rgba(0, 0, 0, 1),
+			0 0 12px rgba(0, 0, 0, 1),
+			0 4px 20px rgba(0, 0, 0, 1);
+		-webkit-text-stroke: 0.5px rgba(0, 0, 0, 1);
 	}
 
 	.artist-links-section {
 		font-family: $font-family-display;
 		font-weight: $font-weight-medium;
 		font-size: 1rem;
+		padding: 0.5rem 0;
+		background: rgba(0, 0, 0, 0.25);
+		border-radius: 4px;
+		padding-left: 0.75rem;
+		text-shadow: 
+			0 0 6px rgba(0, 0, 0, 1),
+			0 0 12px rgba(0, 0, 0, 1),
+			0 4px 20px rgba(0, 0, 0, 1);
+		-webkit-text-stroke: 0.5px rgba(0, 0, 0, 1);
 	}
 
 	.flex-row {
@@ -395,6 +460,11 @@
 				font-weight: $font-weight-medium;
 				margin: 0 0 1rem;
 				color: $color-text-secondary;
+				text-shadow: 
+					0 0 6px rgba(0, 0, 0, 1),
+					0 0 12px rgba(0, 0, 0, 1),
+					0 4px 18px rgba(0, 0, 0, 1);
+				-webkit-text-stroke: 0.5px rgba(0, 0, 0, 1);
 			}
 
 			a {
@@ -404,6 +474,11 @@
 				text-decoration: none;
 				transition: color 0.2s ease;
 				word-break: break-all;
+				text-shadow: 
+					0 0 6px rgba(0, 0, 0, 1),
+					0 0 12px rgba(0, 0, 0, 1),
+					0 4px 20px rgba(0, 0, 0, 1);
+				-webkit-text-stroke: 0.5px rgba(0, 0, 0, 1);
 
 				&:hover,
 				&:focus-visible {
